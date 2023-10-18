@@ -88,32 +88,27 @@ public class JumpscareTrigger : MonoBehaviour
 
     private void CameraSlerp()
     {
-        Debug.Log(camera.transform.eulerAngles.x);
-
 
         if (camera.transform.eulerAngles.x > 0 && camera.transform.eulerAngles.x < 270)
         {
-            if(camera.transform.eulerAngles.x < 5)
+            if (camera.transform.eulerAngles.x < 5)
             {
                 camera.transform.eulerAngles = new Vector3(0.0f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
             }
             else
-            camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x - RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+                camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x - RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
         }
 
-        else if (camera.transform.eulerAngles.x > 270 )
+        else if (camera.transform.eulerAngles.x > 270)
         {
-            if (camera.transform.eulerAngles.x > 355 )
+            if (camera.transform.eulerAngles.x > 355)
             {
                 camera.transform.eulerAngles = new Vector3(0.0f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
             }
             else
-            camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x + RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+                camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x + RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
 
-
-            Debug.Log("siema");
         }
-
     }
 
     private IEnumerator EndJumpscare()

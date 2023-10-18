@@ -8,16 +8,23 @@ public class DialogueSystemImpl : MonoBehaviour, DialogueSystem
     private Dictionary<int, Dialogue> m_Dialogues;
     private int m_CurrentDialogueId;
     private Dialogue m_CurrentDialogue;
+    // int CurrentDialogueId= 0;
+    int dlugosc = 0;
 
+    private List<Dialogue> dialogueList;
+    /*
     public void DialogueNext()
     {
-        if(m_CurrentDialogue != null)
+        if (m_CurrentDialogue != null)
         {
             string line = m_CurrentDialogue.GetNextLine();
-            if(line != null)
-                Debug.Log(line);
+            if (line != null)
+            {
+                //  FindObjectOfType<DialogueCanvas>().Canvas(line);
+
+            }
         }
-        else 
+        else
         {
             Debug.Assert(false, "DialogueSystemImpl.DialogueNext : no dialogue has been initiated ");
         }
@@ -28,16 +35,24 @@ public class DialogueSystemImpl : MonoBehaviour, DialogueSystem
         m_CurrentDialogueId = p_DialogueId;
         m_CurrentDialogue = m_Dialogues.GetValueOrDefault(p_DialogueId, null);
 
-        if(m_CurrentDialogue != null)
+        if (m_CurrentDialogue != null)
         {
             string line = m_CurrentDialogue.StartDialogue();
-            Debug.Log(line);
+          //   FindObjectOfType<DialogueCanvas>().Canvas(line);
+
 
         }
         else
         {
             Debug.Assert(false, "DialogueSystemImpl.DialogueStart : Wrong dialogue id");
         }
+
+    }
+    public void ConnectCanvas()
+    {
+       // string pierwszyString = FindObjectOfType<DialogueTrigger>().lineOfDialogues[0];
+
+
 
     }
 
@@ -52,14 +67,16 @@ public class DialogueSystemImpl : MonoBehaviour, DialogueSystem
         Dialogue dialogue = new Dialogue(1);
 
         dialogue.AddLine("To jest testowy dialog");
-        dialogue.AddLine("linia 2");
         dialogue.AddLine("Koniec");
+        //dialogue.AddLine("linia 2");
         m_Dialogues.Add(1, dialogue);
 
 
         Dialogue dialogue2 = new Dialogue(2);
         dialogue2.AddLine("To jest inny testowy dialog");
         dialogue2.AddLine("Inna linia 2");
+        dialogue2.AddLine("Jeszcze inna linia 2");
+        dialogue2.AddLine("Jeszcze inna linia 2!!!");
         dialogue2.AddLine("Inny koniec");
         m_Dialogues.Add(2, dialogue2);
 
@@ -71,22 +88,61 @@ public class DialogueSystemImpl : MonoBehaviour, DialogueSystem
         Debug.Log(this.GetType() + " OnDetach");
         m_Dialogues.Clear();
     }
-
-    public void OnUpdate()
+    IEnumerator DialogueCoroutine(int dialogueId)
     {
-       if(Input.GetKeyDown(KeyCode.A))
-       {
-            DialogueStart(1);
-       }
+        DialogueStart(dialogueId);
 
-       if(Input.GetKeyDown(KeyCode.S))
+        if (dialogueId == 1)
         {
+
+            dlugosc = 2;
+        }
+        else if (dialogueId == 2)
+        {
+            dlugosc = 5;
+        }
+
+        for (int i = 0; i < dlugosc; i++)
+        {
+            yield return new WaitForSeconds(2.0f);
             DialogueNext();
         }
+        yield return new WaitForSeconds(2.0f);
+        FindObjectOfType<DialogueCanvas>().Canvas(null);
+
 
     }
 
+    public void Dialogue(int dialogueId)
+    {
+        StartCoroutine(DialogueCoroutine(dialogueId));
 
+
+
+    }
+    */
+
+    public void OnUpdate()
+    {
+
+        // DialogueStart(dialogueId);
+        // Invoke("DialogueNext", 2f);
+
+      
+        
+    }
+    public void AddToList(Dialogue dialogue)
+    {
+        dialogueList.Add(dialogue);
+        
+    }
+    public void OnAttach()
+    {
+        dialogueList = new List<Dialogue>();
+
+    }
+    public void OnDetach()
+    { }
     void OnEnable()
     {
         CustomSystemImpl.Instance.Attach(this);
@@ -102,4 +158,11 @@ public class DialogueSystemImpl : MonoBehaviour, DialogueSystem
         CustomSystemImpl.Instance.Detach(this);
     }
 
+    public void DialogueStart(int p_DialogueId)
+    {
+    }
+
+    public void DialogueNext()
+    {
+    }
 }

@@ -6,7 +6,7 @@ public interface JumpscareSystem : CustomSystem
 {
     public void Attach(Jumpscare p_Jumpscare);
 
-    public void Trigger(Jumpscare p_Jumpscare);
+    public void Trigger(Jumpscare p_Jumpscare, Transform p_JumpscareTransform);
 
     public void EndJumpscare(Jumpscare p_Jumpscare);
 

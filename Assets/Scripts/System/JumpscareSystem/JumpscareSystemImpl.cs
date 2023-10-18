@@ -29,7 +29,7 @@ public class JumpscareSystemImpl : MonoBehaviour, JumpscareSystem
 
     public void EndJumpscare(Jumpscare p_Jumpscare)
     {
-        EventSystem.CallJumpscareEnded(null, new EventArgsJumpscare { m_Jumpscare = p_Jumpscare });
+        EventSystem.CallJumpscareEnded(this, new EventArgsJumpscare { m_Jumpscare = p_Jumpscare });
 
     }
 
@@ -48,9 +48,9 @@ public class JumpscareSystemImpl : MonoBehaviour, JumpscareSystem
     {
     }
 
-    public void Trigger(Jumpscare p_Jumpscare)
+    public void Trigger(Jumpscare p_Jumpscare, Transform p_JumpscareTransforom)
     {
-        EventSystem.CallJumpscareTriggered(this, new EventArgsJumpscare { m_Jumpscare = p_Jumpscare }); 
+        EventSystem.CallJumpscareTriggered(this, new EventArgsJumpscare { m_Jumpscare = p_Jumpscare, m_JumpscareTransform = p_JumpscareTransforom }); 
 
     }
 

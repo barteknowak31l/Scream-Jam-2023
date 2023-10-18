@@ -54,4 +54,5 @@ public class EventArgsInventoryItemAdd : EventArgs
 public class EventArgsJumpscare : EventArgs
 {
     public Jumpscare m_Jumpscare{ get; set; }
+    public Transform m_JumpscareTransform{ get; set; }
 }

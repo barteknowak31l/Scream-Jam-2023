@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3edba6e1fd15d4245abb9425c6a1c4af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PLayerCamera: {instanceID: 0}
+  - m_JumpscareCamera: {instanceID: 0}
+  - m_JumpscarePosition: {instanceID: 0}
+  - m_FlashingScreen: {instanceID: 0}
+  - m_Jumpscare: {fileID: 11400000, guid: 86c01a9231a314e4f85d030d9cdedd51, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

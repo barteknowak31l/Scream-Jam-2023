@@ -54,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+
+    private bool canMove = true;
+
     public MovementState state;
     public enum MovementState
     {
@@ -68,8 +71,30 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         startYScale = transform.localScale.y;
     }
+
+    private void OnEnable()
+    {
+        EventSystem.JumpscareTriggered += OnJumpscareTriggered;
+        EventSystem.JumpscareEnded += OnJumpscareEnded;
+    }
+
+    private void OnDisable()
+    {
+        EventSystem.JumpscareTriggered -= OnJumpscareTriggered;
+        EventSystem.JumpscareEnded -= OnJumpscareEnded;
+    }
+
+    private void OnDestroy()
+    {
+        EventSystem.JumpscareTriggered -= OnJumpscareTriggered;
+        EventSystem.JumpscareEnded -= OnJumpscareEnded;
+    }
+
     void Update()
     {
+
+        if (canMove == false) return;
+
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         //wall check
@@ -91,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (canMove == false) return;
+
         MovePlayer();
     }
     private void MyInput()
@@ -222,5 +249,24 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection() 
     { 
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+
+
+    private void OnJumpscareTriggered(object sender, EventArgs args)
+    {
+        if(args is EventArgsJumpscare jumpArgs)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            canMove = false;
+        }
+    }
+
+    private void OnJumpscareEnded(object sender, EventArgs args)
+    {
+        if (args is EventArgsJumpscare jumpArgs)
+        {
+            canMove = true;
+        }
     }
 }

@@ -18,8 +18,7 @@ public class JumpscareTrigger : MonoBehaviour
 
     public Camera camera;
     public float RotationSpeed;
-    private Quaternion startRotation;
-    private Quaternion targetRotation;
+
 
 
     private void Start()

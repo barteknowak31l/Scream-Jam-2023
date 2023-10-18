@@ -6,7 +6,25 @@ public class DialogueTrigger : MonoBehaviour
 {
 
     public Dialogue dialogue;
+    private void Start()
+    {
+        EventSystem.DialogueStart += OnDialogueStart;
+    }
+    private void OnEnable()
+    {
+        EventSystem.DialogueStart += OnDialogueStart;
 
+    }
+    private void OnDestroy()
+    {
+        EventSystem.DialogueStart -= OnDialogueStart;
+
+    }
+    private void OnDisable()
+    {
+        EventSystem.DialogueStart -= OnDialogueStart;
+
+    }
     private void OnTriggerEnter(Collider other)
     {
 
@@ -17,10 +35,14 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
-    public void OnJumpscareTriggered(object sender, EventArgs args)
+    public void OnDialogueStart(object sender, EventArgs args)
     {
 
-     //   if(args is )
+        if(args is EventArgsDialogueStart jumpArgs)
+        {
+            StopAllCoroutines();
+
+        }
     }
 
     IEnumerator DialogueCoroutine()
@@ -30,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
 
             EventSystem.CallDialogueNext(this, new EventArgsDialogueNext { m_DialogueID = dialogue.m_Id, m_CurrentLine  = dialogue.m_CurrentLine  });
 
-            FindObjectOfType<DialogueCanvas>().Canvas(lineOfDialogues);
+            FindObjectOfType<DialogueCanvas>().Canvas(lineOfDialogues, dialogue.color);
             yield return new WaitForSeconds(dialogue.duration);
 
         }
@@ -38,7 +60,7 @@ public class DialogueTrigger : MonoBehaviour
         EventSystem.CallDialogueEnd(this, new EventArgsDialogueEnd { m_DialogueID = dialogue.m_Id });
 
 
-        FindObjectOfType<DialogueCanvas>().Canvas(null);
+        FindObjectOfType<DialogueCanvas>().Canvas("", dialogue.color);
 
 
     }

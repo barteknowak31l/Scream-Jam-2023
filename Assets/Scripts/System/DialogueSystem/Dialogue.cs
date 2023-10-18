@@ -11,6 +11,7 @@ public class Dialogue : ScriptableObject
 
     public int m_Id;
     public float duration;
+    public Color color;
     public List<string> m_Lines;
 
     public int m_CurrentLine { get; private set; }

@@ -31,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
+    [Header("Wall Check")]
+    public float detectionLength;
+    public float sphereCastRadius;
+    public float wallForce;
+    private RaycastHit wallHit;
+    public LayerMask whatIsWall;
+    private bool wallFront;
+    
+
     [Header("Slope Handing")]
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
@@ -63,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        //wall check
+        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, moveDirection, out wallHit, detectionLength, whatIsWall);
         MyInput();
         SpeedControl();
         StateHandler();
@@ -71,6 +82,11 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else 
             rb.drag = 0;
+
+        if (wallFront && !grounded)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, wallForce, rb.velocity.z);
+        }
     }
 
     private void FixedUpdate()
@@ -133,8 +149,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
+        //moving
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         //on slope
         if(OnSlope() && !exitingSlope)
         {
@@ -153,12 +169,12 @@ public class PlayerMovement : MonoBehaviour
         } else if(!grounded)
             {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-
         }
         rb.useGravity = !OnSlope();
     }
     private void SpeedControl()
     {
+        //speed on slope
         if (OnSlope() && !exitingSlope)
         {
             if (rb.velocity.magnitude > moveSpeed)
@@ -177,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    //jump
     private void Jump()
     {
         exitingSlope = true;
@@ -192,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
         exitingSlope = false;
     }
 
+    //slope
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))

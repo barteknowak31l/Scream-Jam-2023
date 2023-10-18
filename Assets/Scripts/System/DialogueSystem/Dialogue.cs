@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue 
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue")]
+
+public class Dialogue : ScriptableObject
 {
 
     // Public members
-    public int m_Id { get; set; }
+
+    public int m_Id;
+    public float duration;
+    public Color color;
+    public List<string> m_Lines;
+
     public int m_CurrentLine { get; private set; }
 
     // Public methods
@@ -16,10 +23,18 @@ public class Dialogue
         this.m_Id = p_Id;
         m_Lines = new List<string>();
     }
-
+    public Dialogue()
+    {
+        m_Lines = new List<string>();
+    }
     public void AddLine(string p_Dialogue)
     {
         m_Lines.Add(p_Dialogue);
+    }
+
+    public void SetId(int id)
+    {
+        this.m_Id = id;
     }
 
     public string StartDialogue()
@@ -50,8 +65,6 @@ public class Dialogue
         return m_Lines[m_CurrentLine++];
     }
 
-    // Private members
-    private List<string> m_Lines;
 
 
 

@@ -28,6 +28,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueStart;
     public static void CallDialogueStart(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueStart");
         DialogueStart?.Invoke(sender, args);
     }
 
@@ -36,6 +37,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueEnd;
     public static void CallDialogueEnd(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueEnd");
         DialogueEnd?.Invoke(sender, args);
     }
 
@@ -43,6 +45,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueNext;
     public static void CallDialogueNext(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueNext");
         DialogueNext?.Invoke(sender, args);
     }
 
@@ -58,10 +61,31 @@ public class EventSystem
     public static event OnInventoryItemAdd InventoryItemAdd;
     public static void CallInventoryItemAdd(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called InventoryItemAdd");
         InventoryItemAdd?.Invoke(sender, args);
     }
 
 
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                     JUMPSCARE EVENTS                       ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
 
+    public delegate void OnJumpscareTriggered(object sender, EventArgs args);
+    public static event OnJumpscareTriggered JumpscareTriggered;
+    public static void CallJumpscareTriggered(object sender, EventArgs args)
+    {
+        Debug.Log(sender.ToString() + " called JumpscareTriggered");
+        JumpscareTriggered?.Invoke(sender, args);
+    }
+
+    public delegate void OnJumpscareEnded(object sender, EventArgs args);
+    public static event OnJumpscareEnded JumpscareEnded;
+    public static void CallJumpscareEnded(object sender, EventArgs args)
+    {
+        Debug.Log(sender.ToString() + " called JumpscareEnded");
+        JumpscareEnded?.Invoke(sender, args);
+    }
 
 }

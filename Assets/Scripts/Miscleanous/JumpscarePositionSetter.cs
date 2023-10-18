@@ -10,12 +10,8 @@ public class JumpscarePositionSetter : MonoBehaviour
     void Update()
     {
 
-
-        
         Vector3 newPosition = camera.transform.position + camera.transform.forward;
         transform.position = newPosition;
         transform.position = new Vector3(transform.position.x, playerHeight, transform.position.z);
-
-
     }
 }

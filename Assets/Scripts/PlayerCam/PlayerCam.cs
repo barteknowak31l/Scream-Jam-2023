@@ -9,8 +9,8 @@ public class PlayerCam : MonoBehaviour
 
     public Transform orientation;
 
-    float xRotation;
-    float yRotation;
+    public float xRotation;
+    public float yRotation;
 
     private Camera camera;
     private bool canMove = true;
@@ -72,8 +72,12 @@ public class PlayerCam : MonoBehaviour
         if (args is EventArgsJumpscare jumpArgs)
         {
             canMove = true;
-            Debug.Log(canMove);
+
+            xRotation = 0;
         }
+
+
+
     }
 
 }

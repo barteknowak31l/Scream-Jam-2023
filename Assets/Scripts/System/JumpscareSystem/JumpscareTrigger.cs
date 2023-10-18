@@ -17,6 +17,10 @@ public class JumpscareTrigger : MonoBehaviour
     private GameObject m_InstantiatedJumpscare;
 
     public Camera camera;
+    public float RotationSpeed;
+    private Quaternion startRotation;
+    private Quaternion targetRotation;
+
 
     private void Start()
     {
@@ -44,14 +48,20 @@ public class JumpscareTrigger : MonoBehaviour
 
         JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
         //camera.transform.LookAt(m_JumpscareTransform);
-        camera.transform.eulerAngles = new Vector3(0, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+        //camera.transform.eulerAngles = new Vector3(0, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+
+/*        Transform t = camera.transform;
+        t.LookAt(m_JumpscarePosition);
+
+        startRotation = camera.transform.rotation;
+        targetRotation = t.rotation;*/
 
 
         m_JumpscarePosition.LookAt(camera.transform);
         m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position, m_JumpscarePosition.rotation ,m_JumpscarePosition);
         m_InstantiatedJumpscare.transform.Translate(m_Jumpscare.offset, Space.World);
 
-        camera.transform.LookAt(m_JumpscarePosition);
+       // camera.transform.LookAt(m_JumpscarePosition);
 
 
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
@@ -66,6 +76,44 @@ public class JumpscareTrigger : MonoBehaviour
 
         StartCoroutine(EndJumpscare());
 
+
+    }
+
+    private void Update()
+    {
+        if(m_IsTriggered)
+        {
+            CameraSlerp();
+        }
+    }
+
+    private void CameraSlerp()
+    {
+        Debug.Log(camera.transform.eulerAngles.x);
+
+
+        if (camera.transform.eulerAngles.x > 0 && camera.transform.eulerAngles.x < 270)
+        {
+            if(camera.transform.eulerAngles.x < 5)
+            {
+                camera.transform.eulerAngles = new Vector3(0.0f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+            }
+            else
+            camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x - RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+        }
+
+        else if (camera.transform.eulerAngles.x > 270 )
+        {
+            if (camera.transform.eulerAngles.x > 355 )
+            {
+                camera.transform.eulerAngles = new Vector3(0.0f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+            }
+            else
+            camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x + RotationSpeed * Time.deltaTime, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+
+
+            Debug.Log("siema");
+        }
 
     }
 

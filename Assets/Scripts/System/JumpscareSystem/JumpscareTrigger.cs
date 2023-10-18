@@ -41,8 +41,18 @@ public class JumpscareTrigger : MonoBehaviour
 
     private void TriggerJumpscare()
     {
+
+        JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
+        //camera.transform.LookAt(m_JumpscareTransform);
+        camera.transform.eulerAngles = new Vector3(0, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+
+
         m_JumpscarePosition.LookAt(camera.transform);
-        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position + m_Jumpscare.offset , m_JumpscarePosition.rotation ,m_JumpscarePosition);
+        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position, m_JumpscarePosition.rotation ,m_JumpscarePosition);
+        m_InstantiatedJumpscare.transform.Translate(m_Jumpscare.offset, Space.World);
+
+        camera.transform.LookAt(m_JumpscarePosition);
+
 
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
         src.clip = m_Jumpscare.scream;
@@ -52,9 +62,6 @@ public class JumpscareTrigger : MonoBehaviour
 
         m_IsTriggered = true;
         m_IsTriggeredOnce = true;
-
-        JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
-        Debug.Log("Trigger event should be called");
 
 
         StartCoroutine(EndJumpscare());

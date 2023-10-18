@@ -62,6 +62,24 @@ public class EventSystem
     }
 
 
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                     JUMPSCARE EVENTS                       ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
 
+    public delegate void OnJumpscareTriggered(object sender, EventArgs args);
+    public static event OnJumpscareTriggered JumpscareTriggered;
+    public static void CallJumpscareTriggered(object sender, EventArgs args)
+    {
+        JumpscareTriggered?.Invoke(sender, args);
+    }
+
+    public delegate void OnJumpscareEnded(object sender, EventArgs args);
+    public static event OnJumpscareEnded JumpscareEnded;
+    public static void CallJumpscareEnded(object sender, EventArgs args)
+    {
+        JumpscareEnded?.Invoke(sender, args);
+    }
 
 }

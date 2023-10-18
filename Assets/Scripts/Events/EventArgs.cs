@@ -43,3 +43,15 @@ public class EventArgsInventoryItemAdd : EventArgs
 {
     public int m_ItemID { get; set; }
 }
+
+
+
+//////////////////////////////////////////////////////////////////
+///                                                            ///
+///                   JUMPSCARE EVENTS ARGS                    ///
+///                                                            ///
+//////////////////////////////////////////////////////////////////
+public class EventArgsJumpscare : EventArgs
+{
+    public Jumpscare m_Jumpscare{ get; set; }
+}

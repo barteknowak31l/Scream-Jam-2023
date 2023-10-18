@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class InteractableTest : MonoBehaviour, InteractionSystem
 {
+    [SerializeField] private Animator myDoor = null;
+
+    [SerializeField] private string animationName;
     private bool isActivated = false;
 
     public event System.Action<GameObject> OnInteraction;
@@ -19,13 +22,9 @@ public class InteractableTest : MonoBehaviour, InteractionSystem
     {
         if (!isActivated)
         {
-            isActivated = false;
+            isActivated = true; //Sprawia ¿e triggera mo¿na u¿yæ tylko raz
 
-            // Wygeneruj losow¹ liczbê
-            int randomValue = Random.Range(1, 101);
-
-            // Wypisz losow¹ liczbê do konsoli
-            Debug.Log("Losowa liczba: " + randomValue);
+            Debug.Log("dziala"); //spradza czy dziala 
 
             // Aktywuj obiekt (lub wykonaj inn¹ logikê, jeœli to potrzebne)
             gameObject.SetActive(true);
@@ -37,8 +36,10 @@ public class InteractableTest : MonoBehaviour, InteractionSystem
 
     private void Interact(GameObject interactedObject)
     {
+        Debug.Log("log");
         // Obs³uga interakcji
-        Debug.Log("Interakcja z obiektem: " + interactedObject.name);
+        myDoor.Play(animationName, 0, 0.0f);
+        gameObject.SetActive(false);
     }
     public void OnAttach()
     {

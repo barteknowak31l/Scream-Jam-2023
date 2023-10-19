@@ -11,20 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDrag;
 
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
-    bool readyToJump=true;
-
-    [Header("Crouching")]
-    public float crouchSpeed;
-    public float crouchYScale;
-    private float startYScale;
 
     [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
-    public KeyCode crouchKey = KeyCode.LeftControl;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -62,14 +51,11 @@ public class PlayerMovement : MonoBehaviour
     {
         walking,
         sprinting,
-        crouching,
-        air
     }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        startYScale = transform.localScale.y;
     }
 
     private void OnEnable()
@@ -124,39 +110,13 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        //jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
-        {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
-        }
-        //start crouch
-        if (Input.GetKeyDown(crouchKey)) 
-        {
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-        }
-
-        //stop crouch
-        if(Input.GetKeyUp(crouchKey)) 
-        {
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-        }
+       
     }
 
     private void StateHandler()
     {
         //Crouching
-        if (Input.GetKey(crouchKey)) 
-        {
-            state = MovementState.crouching;
-            moveSpeed = crouchSpeed;
-        }
-        //Sprinting
-        else if(grounded && Input.GetKey(sprintKey))
+         if(grounded && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
@@ -167,11 +127,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.walking;
             moveSpeed = walkSpeed;
         }
-        //Air
-        else 
-        { 
-        state = MovementState.air;
-        }
+
     }
 
     private void MovePlayer()
@@ -193,9 +149,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             //in air
-        } else if(!grounded)
-            {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
         rb.useGravity = !OnSlope();
     }
@@ -219,20 +172,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
         }
-    }
-    //jump
-    private void Jump()
-    {
-        exitingSlope = true;
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-    }
-
-    private void ResetJump()
-    {
-        readyToJump = true;
-        exitingSlope = false;
     }
 
     //slope

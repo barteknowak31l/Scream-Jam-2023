@@ -43,3 +43,13 @@ public class EventArgsInventoryItemAdd : EventArgs
 {
     public int m_ItemID { get; set; }
 }
+//////////////////////////////////////////////////////////////////
+///                                                            ///
+///                   INTERACTION EVENTS ARGS                  ///
+///                                                            ///
+//////////////////////////////////////////////////////////////////
+
+public class EventArgsInteraction : EventArgs
+{
+    public int m_InteractionID { get; set; }
+}

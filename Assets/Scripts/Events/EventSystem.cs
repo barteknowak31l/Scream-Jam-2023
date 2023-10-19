@@ -60,8 +60,16 @@ public class EventSystem
     {
         InventoryItemAdd?.Invoke(sender, args);
     }
-
-
-
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                      INTERACTION EVENTS                    ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
+    public delegate void OnInteraction(object sender, EventArgs args);
+    public static event OnInteraction Interaction;
+    public static void CallOnInteraction(object sender, EventArgs args)
+    {
+        Interaction?.Invoke(sender, args);
+    }
 
 }

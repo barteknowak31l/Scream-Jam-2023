@@ -7,12 +7,15 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
 {
     public Transform InteractorSource;
     public float InteractRange;
-    public event Action<GameObject> OnInteraction;  // Zdarzenie interakcji
+
+    public event Action<GameObject> OnInteraction;
+
+    // Zdarzenie interakcji
 
     public void TriggerInteraction(GameObject interactedObject)
     {
         // Wywo³aj zdarzenie interakcji z okreœlonym obiektem
-        OnInteraction?.Invoke(interactedObject);
+
     }
 
     public void OnAttach()
@@ -32,9 +35,6 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
 
     private void Start()
     {
-        // Przyk³adowa inicjalizacja
-        // Subskrybuj zdarzenie interakcji
-        OnInteraction += HandleInteraction;
     }
     void Update()
     {
@@ -49,18 +49,5 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
                 }
             }
         }
-    }
-    private void HandleInteraction(GameObject interactedObject)
-    {
- 
-        
-
-        
-    }
-
-    private void OnDestroy()
-    {
-        // Przyk³adowa logika czyszczenia i od³¹czania od zdarzenia
-        OnInteraction -= HandleInteraction;
     }
 }

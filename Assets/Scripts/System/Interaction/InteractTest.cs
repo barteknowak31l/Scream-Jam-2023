@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,16 @@ using UnityEngine;
 
 public class InteractableTest : MonoBehaviour, InteractionSystem
 {
-    [SerializeField] private Animator myDoor = null;
-
-    [SerializeField] private string animationName;
     private bool isActivated = false;
+    public Item item;
+
 
     public event System.Action<GameObject> OnInteraction;
-
-    private void Awake()
+    InventorySystemImpl inventorySystem = new InventorySystemImpl();
+    public void Awake()
     {
-        // Subskrybuj zdarzenie interakcji w momencie uruchomienia obiektu
-        OnInteraction += Interact;
     }
-
+    
     public void TriggerInteraction(GameObject interactedObject)
     {
         if (!isActivated)
@@ -29,18 +27,16 @@ public class InteractableTest : MonoBehaviour, InteractionSystem
             // Aktywuj obiekt (lub wykonaj inn¹ logikê, jeœli to potrzebne)
             gameObject.SetActive(true);
 
-            // Wywo³aj zdarzenie interakcji, przekazuj¹c ten obiekt
-            OnInteraction?.Invoke(gameObject);
+        }
+        if (item != null)
+        {
+            inventorySystem.AddItem(item);
+            gameObject.SetActive(false);
         }
     }
 
-    private void Interact(GameObject interactedObject)
-    {
-        Debug.Log("log");
-        // Obs³uga interakcji
-        myDoor.Play(animationName, 0, 0.0f);
-        gameObject.SetActive(false);
-    }
+    
+
     public void OnAttach()
     {
         // Dodaj logikê do obs³ugi do³¹czania do systemu interakcji (jeœli potrzebne)

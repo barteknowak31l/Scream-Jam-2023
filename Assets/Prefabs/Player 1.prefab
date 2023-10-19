@@ -370,14 +370,7 @@ MonoBehaviour:
   walkSpeed: 2
   sprintSpeed: 8
   groundDrag: 5
-  jumpForce: 6
-  jumpCooldown: 0.2
-  airMultiplier: 0.4
-  crouchSpeed: 3
-  crouchYScale: 0.5
-  jumpKey: 32
   sprintKey: 304
-  crouchKey: 306
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -391,7 +384,11 @@ MonoBehaviour:
   maxSlopeAngle: 40
   orientation: {fileID: 5490073178556088862}
   state: 0
+<<<<<<< HEAD
 --- !u!114 &5660809566126844526
+=======
+--- !u!114 &-5173209380907999679
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -403,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2974149c6fb01b409a280581634da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!95 &3742026089686330673
 Animator:
   serializedVersion: 5
@@ -436,6 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a592d2c13aeb1f94fbc8a5d39b64f707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> main
 --- !u!1001 &8692291824498226543
 PrefabInstance:
   m_ObjectHideFlags: 0

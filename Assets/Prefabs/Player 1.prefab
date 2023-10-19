@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.27730602
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 9060344782593831798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.84, y: 1.118496, z: 23.821522}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -373,12 +373,12 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  detectionLength: 0
-  sphereCastRadius: 0
-  wallForce: 0
+  detectionLength: 0.15
+  sphereCastRadius: 0.25
+  wallForce: -0.1
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   maxSlopeAngle: 40
   orientation: {fileID: 5490073178556088862}
   state: 0

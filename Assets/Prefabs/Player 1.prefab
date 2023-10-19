@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 1590037766321224905}
   - component: {fileID: 744141966138224915}
   - component: {fileID: 7149246884245777650}
-  - component: {fileID: 5660809566126844526}
-  - component: {fileID: 3742026089686330673}
-  - component: {fileID: 330200092470182680}
+  - component: {fileID: -5173209380907999679}
+  - component: {fileID: 6318340300182732667}
+  - component: {fileID: 6671441440030988467}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -375,20 +375,16 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  detectionLength: 0.7
-  sphereCastRadius: 0.25
-  wallForce: -2
+  detectionLength: 2
+  sphereCastRadius: 0
+  wallForce: 0
   whatIsWall:
     serializedVersion: 2
     m_Bits: 512
   maxSlopeAngle: 40
   orientation: {fileID: 5490073178556088862}
   state: 0
-<<<<<<< HEAD
---- !u!114 &5660809566126844526
-=======
 --- !u!114 &-5173209380907999679
->>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,8 +396,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2974149c6fb01b409a280581634da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
---- !u!95 &3742026089686330673
+--- !u!114 &6318340300182732667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060344782593831798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a592d2c13aeb1f94fbc8a5d39b64f707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6671441440030988467
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -422,20 +429,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &330200092470182680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060344782593831798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a592d2c13aeb1f94fbc8a5d39b64f707, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
->>>>>>> main
 --- !u!1001 &8692291824498226543
 PrefabInstance:
   m_ObjectHideFlags: 0

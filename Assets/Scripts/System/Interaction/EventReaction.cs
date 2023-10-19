@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class EventReaction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public InventorySystemImpl inventorySystem;//  = new InventorySystemImpl();
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        EventSystem.Interaction -= OnInteractionEvent;
+    }
+    private void OnDestroy()
+    {
+        EventSystem.Interaction -= OnInteractionEvent;
+    }
+    private void OnEnable()
+    { 
+        EventSystem.Interaction += OnInteractionEvent;
+    }
+    private void OnInteractionEvent(object sender, EventArgs args)
+    {
+        if (args is EventArgsInteraction intarks)
+        {
+            inventorySystem.AddItem(intarks.m_Item); // ogólnie dzia³a tylko nie wiem czemu item dodaj siê 2 razy gdzieœ jest b³¹d pozdrawaiam
+            Debug.Log("dziala");
+        }
     }
 }

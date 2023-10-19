@@ -32,7 +32,6 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
     {
         // Dodaj logikê aktualizacji systemu interakcji (jeœli potrzebne)
     }
-
     private void Start()
     {
     }
@@ -45,6 +44,7 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out InteractionSystem interactObj))
                 {
+                    Debug.Log("promien");
                     interactObj.TriggerInteraction(hitInfo.collider.gameObject);
                 }
             }

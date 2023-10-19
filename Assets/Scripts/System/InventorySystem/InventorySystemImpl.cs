@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class InventorySystemImpl : MonoBehaviour, InventorySystem
 {
+    public static InventorySystemImpl Instance;
     public List<Item> items = new List<Item>();
+    private void Awake()
+    {
+        Instance = this;
+    }
     public void AddItem(Item item)
     {
         items.Add(item);
-        foreach (Item itemes in items)
-        {
-            Debug.Log(itemes.itemID);
-        }
     }
 
     public void RemoveItem(int itemID)
@@ -26,6 +27,10 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
     bool InventorySystem.HasItem(int itemID)
     {
         return items.Exists(item => item.itemID == itemID);
+    }
+    private void Start()
+    {
+ 
     }
 
     public void OnAttach()

@@ -51,5 +51,5 @@ public class EventArgsInventoryItemAdd : EventArgs
 
 public class EventArgsInteraction : EventArgs
 {
-    public int m_InteractionID { get; set; }
+    public Item m_Item { get; set; }
 }

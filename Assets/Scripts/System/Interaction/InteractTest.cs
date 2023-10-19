@@ -10,33 +10,24 @@ public class InteractableTest : MonoBehaviour, InteractionSystem
     public Item item;
 
 
-    public event System.Action<GameObject> OnInteraction;
-    InventorySystemImpl inventorySystem = new InventorySystemImpl();
+   // public event System.Action<GameObject> OnInteraction;
+    //InventorySystemImpl inventorySystem = new InventorySystemImpl();
     public void Awake()
     {
+
     }
-    
+
     public void TriggerInteraction(GameObject interactedObject)
     {
+        Debug.Log("test");
         if (!isActivated)
         {
-            isActivated = true; //Sprawia ¿e triggera mo¿na u¿yæ tylko raz
-
-            Debug.Log("dziala"); //spradza czy dziala 
-
-            // Aktywuj obiekt (lub wykonaj inn¹ logikê, jeœli to potrzebne)
-            gameObject.SetActive(true);
-
-        }
-        if (item != null)
-        {
-            inventorySystem.AddItem(item);
-            gameObject.SetActive(false);
+            Debug.Log("test2");
+            isActivated = true;
+            EventSystem.CallOnInteraction(this, new EventArgsInteraction { m_Item = item }); // Wywo³anie eventu
+            gameObject.SetActive(false); //usuwanie obiektu 
         }
     }
-
-    
-
     public void OnAttach()
     {
         // Dodaj logikê do obs³ugi do³¹czania do systemu interakcji (jeœli potrzebne)

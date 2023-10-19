@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
-    public float sprintSpeed;
 
     public float groundDrag;
-
-
-    [Header("Keybinds")]
-    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -28,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsWall;
     private bool wallFront;
     
-
     [Header("Slope Handing")]
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
@@ -43,14 +38,12 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-
     private bool canMove = true;
 
     public MovementState state;
     public enum MovementState
     {
-        walking,
-        sprinting,
+        walking
     }
     void Start()
     {
@@ -94,9 +87,10 @@ public class PlayerMovement : MonoBehaviour
         else 
             rb.drag = 0;
 
-        if (wallFront && !grounded)
+        if (wallFront)
         {
-            rb.velocity = new Vector3(rb.velocity.x, wallForce, rb.velocity.z);
+            Vector3 pushDirection = moveDirection * wallForce;
+            rb.velocity = pushDirection;
         }
     }
 
@@ -115,19 +109,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        //Crouching
-         if(grounded && Input.GetKey(sprintKey))
-        {
-            state = MovementState.sprinting;
-            moveSpeed = sprintSpeed;
-        }
         //Walking
-        else if(grounded)
+        if(grounded)
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
         }
-
     }
 
     private void MovePlayer()
@@ -148,7 +135,6 @@ public class PlayerMovement : MonoBehaviour
         else if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-            //in air
         }
         rb.useGravity = !OnSlope();
     }
@@ -173,7 +159,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     //slope
     private bool OnSlope()
     {
@@ -189,7 +174,6 @@ public class PlayerMovement : MonoBehaviour
     { 
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
-
 
     private void OnJumpscareTriggered(object sender, EventArgs args)
     {

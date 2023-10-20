@@ -69,4 +69,7 @@ public class JumpscareSystemImpl : MonoBehaviour, JumpscareSystem
         CustomSystemImpl.Instance.Detach(this);
     }
 
+
+
+
 }

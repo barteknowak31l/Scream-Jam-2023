@@ -2,31 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : MonoBehaviour, EventReaction
 {
+    public enum TriggerType
+    {
+        OnTriggerEnter, OnEvent
+    }
+
+    public enum SupportedEvents
+    {
+        None, DialogueStart
+    }
+
+    public string m_Name;
+
+    [HideInInspector]
+    public TriggerType triggerType = TriggerType.OnTriggerEnter;
+
+    [HideInInspector]
+    public SupportedEvents eventType = SupportedEvents.None;
+
 
     public Dialogue dialogue;
+ 
     private void Start()
     {
-        EventSystem.DialogueStart += OnDialogueStart;
+        SubscribeToEvent();
+
     }
     private void OnEnable()
     {
-        EventSystem.DialogueStart += OnDialogueStart;
+        SubscribeToEvent();
 
     }
     private void OnDestroy()
     {
-        EventSystem.DialogueStart -= OnDialogueStart;
+        UnsubscribeFromEvent();
 
     }
     private void OnDisable()
     {
-        EventSystem.DialogueStart -= OnDialogueStart;
+        UnsubscribeFromEvent();
 
     }
     private void OnTriggerEnter(Collider other)
     {
+
+        if (triggerType != TriggerType.OnTriggerEnter) return;
+
 
         EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
 
@@ -37,9 +60,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public void OnDialogueStart(object sender, EventArgs args)
     {
-
         if(args is EventArgsDialogueStart jumpArgs)
         {
+            if(jumpArgs.m_DialogueID != dialogue.m_Id)
             StopAllCoroutines();
 
         }
@@ -65,6 +88,82 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
+    public void OnEvent(object sender, EventArgs args)
+    {
+        switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.DialogueStart:
+                {
 
+                    if (args is EventArgsDialogueStart dialogueArgs)
+                    {
+                        if(dialogueArgs.m_DialogueID == dialogue.m_Id)
+                            StartCoroutine(DialogueCoroutine());
+                    }
+                    break;
+                }
+        }
+    }
+
+    public void SubscribeToEvent()
+    {
+
+        EventSystem.DialogueStart += OnDialogueStart;
+
+
+        if (triggerType != TriggerType.OnEvent) return;
+
+        switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.DialogueStart:
+                {
+                    EventSystem.DialogueStart += OnEvent;
+                    break;
+                }
+        }
+    }
+
+    public void UnsubscribeFromEvent()
+    {
+        EventSystem.DialogueStart -= OnDialogueStart;
+
+
+        if (triggerType != TriggerType.OnEvent) return;
+
+        switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.DialogueStart:
+                {
+                    EventSystem.DialogueStart -= OnEvent;
+                    break;
+                }
+        }
+    }
+
+
+    private void OnValidate()
+    {
+        if (triggerType == TriggerType.OnTriggerEnter)
+        {
+            Collider myCollider = GetComponent<Collider>();
+
+            if (myCollider == null)
+            {
+                Debug.LogError("DialogueTrigger " + m_Name + " nie ma aktywnego Collider'a!");
+            }
+        }
+    }
 
 }

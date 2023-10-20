@@ -77,7 +77,6 @@ public class EventReactionPickup : MonoBehaviour, EventReaction
 
     private void OnDestroyOption()
     {
-        Debug.Log(this.GetType() + "OnDestroyOption id:" + item.itemID);
         Destroy(gameObject);
     }
 
@@ -89,7 +88,6 @@ public class EventReactionPickup : MonoBehaviour, EventReaction
 
     private void OnAddToInventoryOption(Item item)
     {
-        Debug.Log(this.GetType() + "OnAddOption id:" + item.itemID);
 
         InventorySystemImpl.Instance.AddItem(item);
 

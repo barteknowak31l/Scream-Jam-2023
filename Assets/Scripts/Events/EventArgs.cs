@@ -72,6 +72,7 @@ public class EventArgsInteractionPickupItem : EventArgs
     public Item m_Item { get; set; }
 }
 
+
 public class EventArgsInteractionDoor : EventArgs
 {
     public Door m_Door { get; set; } 

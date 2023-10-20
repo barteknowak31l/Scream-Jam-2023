@@ -19,6 +19,11 @@ public class DialogueTriggerCustomInspector : Editor
             EditorGUILayout.BeginVertical();
             trigger.eventType = (DialogueTrigger.SupportedEvents)EditorGUILayout.EnumPopup("EventType", trigger.eventType);
 
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.RemoveItem)
+            {
+                trigger.item = (Item)EditorGUILayout.ObjectField("ItemToBeRemoved", trigger.item, typeof(Item), false);
+            }
+
             EditorGUILayout.EndVertical();
         }
 

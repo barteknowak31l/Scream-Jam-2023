@@ -108,6 +108,18 @@ public class EventSystem
         Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
         InteractionPickupItem?.Invoke(sender, args);
     }
+
+
+
+
+
+
+
+
+
+
+
+
     public delegate void OnInteractionDoor(object sender, EventArgs args);
     public static event OnInteractionDoor InteractionDoor;
     public static void CallOnInteractionDoor(object sender, EventArgs args)

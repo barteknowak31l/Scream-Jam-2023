@@ -89,4 +89,5 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
         }
         Debug.Log("ITEMS IN EQ: " + msg);
     }
+
 }

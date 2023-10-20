@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     public enum SupportedEvents
     {
-        None, DialogueStart
+        None, DialogueStart,RemoveItem
     }
 
     public string m_Name;
@@ -22,6 +22,8 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
     [HideInInspector]
     public SupportedEvents eventType = SupportedEvents.None;
 
+    [HideInInspector]
+    public Item item;
 
     public Dialogue dialogue;
  
@@ -106,6 +108,16 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     }
                     break;
                 }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    if (args is EventArgsInventoryItemRemove iArgs)
+                    {
+                        if (iArgs.m_ItemID == item.itemID)
+                            StartCoroutine(DialogueCoroutine());
+                    }
+                    break;
+                }
         }
     }
 
@@ -128,6 +140,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     EventSystem.DialogueStart += OnEvent;
                     break;
                 }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    EventSystem.InventoryItemRemove += OnEvent;
+                    break;
+                }
         }
     }
 
@@ -147,6 +165,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
             case SupportedEvents.DialogueStart:
                 {
                     EventSystem.DialogueStart -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    EventSystem.InventoryItemRemove -= OnEvent;
                     break;
                 }
         }

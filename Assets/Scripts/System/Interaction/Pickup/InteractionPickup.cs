@@ -14,6 +14,7 @@ public class InteractionPickup : MonoBehaviour, Interactable
         {
             isActivated = true;
             EventSystem.CallOnInteractionPickupItem(this, new EventArgsInteractionPickupItem { m_Item = item }); // Wywo³anie eventu
+            InventorySystemImpl.Instance.AddItem(item);
         }
     }
 

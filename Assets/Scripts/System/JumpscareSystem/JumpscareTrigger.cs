@@ -37,15 +37,20 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
     private GameObject m_InstantiatedJumpscare;
 
     public Camera camera;
+    public Transform player;
     public float RotationSpeed = 500;
 
     public string m_Name;
+    public float distance = 1;
 
 
 
     private void Start()
     {
         JumpscareSystemImpl.Instance.Attach(m_Jumpscare);
+        m_JumpscarePosition = GameObject.FindGameObjectWithTag("JumpscarePosition").transform;
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,9 +76,9 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
 
         JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
 
-        m_JumpscarePosition.LookAt(camera.transform);
-        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position, m_JumpscarePosition.rotation ,m_JumpscarePosition);
-        m_InstantiatedJumpscare.transform.Translate(m_Jumpscare.offset, Space.World);
+        Quaternion rotation = Quaternion.Euler(player.rotation.eulerAngles.x, player.rotation.eulerAngles.y + 180, player.rotation.eulerAngles.z);
+        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, player.transform.position + player.transform.forward + m_Jumpscare.offset, rotation ,player.transform);
+
 
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
         src.clip = m_Jumpscare.scream;
@@ -163,9 +168,6 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
 
                     if (args is EventArgsInteractionPickupItem pickupArgs)
                     {
-                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
-                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
-
                         if (pickupArgs.m_Item.itemID == item.itemID)
                             TriggerJumpscare();
                     }

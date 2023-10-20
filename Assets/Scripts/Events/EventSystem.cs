@@ -99,12 +99,12 @@ public class EventSystem
         Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
         InteractionPickupItem?.Invoke(sender, args);
     }
-    public delegate void OnDoorInteraction(object sender, EventArgs args);
-    public static event OnDoorInteraction DoorInteraction;
-    public static void CallOnOnDoorInteraction(object sender, EventArgs args)
+    public delegate void OnInteractionDoor(object sender, EventArgs args);
+    public static event OnInteractionDoor InteractionDoor;
+    public static void CallOnInteractionDoor(object sender, EventArgs args)
     {
-        EventArgsInteractionPickupItem a = (EventArgsInteractionPickupItem)args; // dodać po stworzenuu
-        Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
-        InteractionPickupItem?.Invoke(sender, args);
+        EventArgsInteractionDoor a = (EventArgsInteractionDoor)args; 
+        Debug.Log(sender.ToString() + " called InteractionDoor ID: " + a.m_Door.doorID);
+        InteractionDoor?.Invoke(sender, args);
     }
 }

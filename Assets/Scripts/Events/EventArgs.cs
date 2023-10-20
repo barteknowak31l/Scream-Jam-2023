@@ -67,7 +67,7 @@ public class EventArgsInteractionPickupItem : EventArgs
     public Item m_Item { get; set; }
 }
 
-public class EventArgsDoorInteraction : EventArgs
+public class EventArgsInteractionDoor : EventArgs
 {
-    //public Door m_door { get; set; } odkomentować po stworzeniu Door 
+    public Door m_Door { get; set; } 
 }

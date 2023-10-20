@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Door", menuName = "Door")]
-public class Door : MonoBehaviour
+[CreateAssetMenu(fileName = "New Door", menuName = "Door/doors")]
+public class Door : ScriptableObject
 {
-    public int itemID;        // Unikalne ID przedmiotu
-    public string itemName;   // Nazwa przedmiotu
-    public string description; // Opis przedmiotu
+    public int doorID;// Unikalne ID drzwi
 
-    // Metoda, która inicjuje przedmiot
-    public void Initialize(int id, string name, string desc)
+    // Metoda, która inicjuje drzwi
+    public void Initialize(int id)
     {
-        itemID = id;
-        itemName = name;
-        description = desc;
+        doorID = id;
 
     }
 }

@@ -64,6 +64,15 @@ public class EventSystem
         InventoryItemAdd?.Invoke(sender, args);
     }
 
+    public delegate void OnInventoryItemRemove(object sender, EventArgs args);
+    public static event OnInventoryItemRemove InventoryItemRemove;
+    public static void CallInventoryItemRemove(object sender, EventArgs args)
+    {
+        EventArgsInventoryItemRemove iArgs = (EventArgsInventoryItemRemove)args;
+        Debug.Log(sender.ToString() + " called InventoryItemRemove ID: " +iArgs.m_ItemID);
+        InventoryItemAdd?.Invoke(sender, args);
+    }
+
 
     //////////////////////////////////////////////////////////////////
     ///                                                            ///

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EventArgs
 {
-    // Po tej klasie dziedzicz¹ klasy przechowuj¹ce argumenty poszczególnych eventów
+    // Po tej klasie dziedziczï¿½ klasy przechowujï¿½ce argumenty poszczegï¿½lnych eventï¿½w
 }
 
 
@@ -42,4 +42,27 @@ public class EventArgsDialogueNext : EventArgs
 public class EventArgsInventoryItemAdd : EventArgs
 {
     public int m_ItemID { get; set; }
+}
+
+
+
+//////////////////////////////////////////////////////////////////
+///                                                            ///
+///                   JUMPSCARE EVENTS ARGS                    ///
+///                                                            ///
+//////////////////////////////////////////////////////////////////
+public class EventArgsJumpscare : EventArgs
+{
+    public Jumpscare m_Jumpscare { get; set; }
+    public Transform m_JumpscareTransform { get; set; }
+}
+//////////////////////////////////////////////////////////////////
+///                                                            ///
+///                   INTERACTION EVENTS ARGS                  ///
+///                                                            ///
+//////////////////////////////////////////////////////////////////
+
+public class EventArgsInteractionPickupItem : EventArgs
+{
+    public Item m_Item { get; set; }
 }

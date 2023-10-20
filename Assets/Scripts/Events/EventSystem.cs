@@ -7,16 +7,15 @@ using UnityEngine;
 public class EventSystem
 {
 
-    ///////////////// SYGNATURA EVENTÓW ( patrzeæ gdzie DUZE litery! ) /////////////
+    ///////////////// SYGNATURA EVENTï¿½W ( patrzeï¿½ gdzie DUZE litery! ) /////////////
     //  
-    // public delegate void On<NazwaSystemu><Czynnoœæ>(object sender, EventArgs args)
-    // public static event On<NazwaSystemu><Czynnoœæ> <System><Czynnoœæ>
-    // public static void Call<NazwaSystemu><Czynnoœæ> (object sender, EventArgs args)
+    // public delegate void On<NazwaSystemu><Czynnoï¿½ï¿½>(object sender, EventArgs args)
+    // public static event On<NazwaSystemu><Czynnoï¿½ï¿½> <System><Czynnoï¿½ï¿½>
+    // public static void Call<NazwaSystemu><Czynnoï¿½ï¿½> (object sender, EventArgs args)
     // {
-    //      <System><Czynnoœæ>?.Invoke(sender, args);
+    //      <System><Czynnoï¿½ï¿½>?.Invoke(sender, args);
     // }
     //
-
 
     //////////////////////////////////////////////////////////////////
     ///                                                            ///
@@ -28,6 +27,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueStart;
     public static void CallDialogueStart(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueStart");
         DialogueStart?.Invoke(sender, args);
     }
 
@@ -36,6 +36,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueEnd;
     public static void CallDialogueEnd(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueEnd");
         DialogueEnd?.Invoke(sender, args);
     }
 
@@ -43,6 +44,7 @@ public class EventSystem
     public static event OnDialogueStart DialogueNext;
     public static void CallDialogueNext(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called DialogueNext");
         DialogueNext?.Invoke(sender, args);
     }
 
@@ -58,10 +60,44 @@ public class EventSystem
     public static event OnInventoryItemAdd InventoryItemAdd;
     public static void CallInventoryItemAdd(object sender, EventArgs args)
     {
+        Debug.Log(sender.ToString() + " called InventoryItemAdd");
         InventoryItemAdd?.Invoke(sender, args);
     }
 
 
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                     JUMPSCARE EVENTS                       ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
 
+    public delegate void OnJumpscareTriggered(object sender, EventArgs args);
+    public static event OnJumpscareTriggered JumpscareTriggered;
+    public static void CallJumpscareTriggered(object sender, EventArgs args)
+    {
+        Debug.Log(sender.ToString() + " called JumpscareTriggered");
+        JumpscareTriggered?.Invoke(sender, args);
+    }
+
+    public delegate void OnJumpscareEnded(object sender, EventArgs args);
+    public static event OnJumpscareEnded JumpscareEnded;
+    public static void CallJumpscareEnded(object sender, EventArgs args)
+    {
+        Debug.Log(sender.ToString() + " called JumpscareEnded");
+        JumpscareEnded?.Invoke(sender, args);
+    }
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                      INTERACTION EVENTS                    ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
+    public delegate void OnInteractionPickupItem(object sender, EventArgs args);
+    public static event OnInteractionPickupItem InteractionPickupItem;
+    public static void CallOnInteractionPickupItem(object sender, EventArgs args)
+    {
+        EventArgsInteractionPickupItem a = (EventArgsInteractionPickupItem)args;
+        Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
+        InteractionPickupItem?.Invoke(sender, args);
+    }
 
 }

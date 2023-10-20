@@ -4,7 +4,11 @@ using UnityEngine;
 
 public interface InventorySystem : CustomSystem
 {
-    public void OnDialogueStart(object sender, EventArgs args);
-    public void OnDialogueNext(object sender, EventArgs args);
-    public void OnDialogueEnd(object sender, EventArgs args);
+    public void AddItem(Item item);
+    public void RemoveItem(int itemID);
+    public bool HasItem(int itemID);
+
+    /// to tylko do debugowania
+    public void PrintItemNames();
+
 }

@@ -72,6 +72,10 @@ public class EventArgsInteractionPickupItem : EventArgs
     public Item m_Item { get; set; }
 }
 
+public class EventArgsInteractionTriggerDialogue : EventArgs
+{
+    public int m_DialogueID { get; set; }
+}
 
 public class EventArgsInteractionDoor : EventArgs
 {

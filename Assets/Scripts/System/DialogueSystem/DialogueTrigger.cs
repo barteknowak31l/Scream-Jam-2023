@@ -15,7 +15,8 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
     }
 
     public string m_Name;
-
+    public bool TriggerOnlyOnce = true;
+    private bool hasBeenTriggeded = false;
     [HideInInspector]
     public TriggerType triggerType = TriggerType.OnTriggerEnter;
 
@@ -53,9 +54,8 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
         if (triggerType != TriggerType.OnTriggerEnter) return;
 
 
-        EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
 
-        StartCoroutine(DialogueCoroutine());
+        StartDialogueCoroutine();
 
 
     }
@@ -72,6 +72,9 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     IEnumerator DialogueCoroutine()
     {
+
+        EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
+        hasBeenTriggeded = true;
         foreach (string lineOfDialogues in dialogue.m_Lines)
         {
 
@@ -101,10 +104,10 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
             case SupportedEvents.DialogueStart:
                 {
 
-                    if (args is EventArgsDialogueStart dialogueArgs)
+                    if (args is EventArgsInteractionTriggerDialogue dialogueArgs)
                     {
                         if(dialogueArgs.m_DialogueID == dialogue.m_Id)
-                            StartCoroutine(DialogueCoroutine());
+                            StartDialogueCoroutine();
                     }
                     break;
                 }
@@ -114,7 +117,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     if (args is EventArgsInventoryItemRemove iArgs)
                     {
                         if (iArgs.m_ItemID == item.itemID)
-                            StartCoroutine(DialogueCoroutine());
+                            StartDialogueCoroutine();
                     }
                     break;
                 }
@@ -137,7 +140,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 }
             case SupportedEvents.DialogueStart:
                 {
-                    EventSystem.DialogueStart += OnEvent;
+                    EventSystem.InteractionTriggerDialogue += OnEvent;
                     break;
                 }
             case SupportedEvents.RemoveItem:
@@ -164,7 +167,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 }
             case SupportedEvents.DialogueStart:
                 {
-                    EventSystem.DialogueStart -= OnEvent;
+                    EventSystem.InteractionTriggerDialogue -= OnEvent;
                     break;
                 }
             case SupportedEvents.RemoveItem:
@@ -190,4 +193,9 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
         }
     }
 
+    private void StartDialogueCoroutine()
+    {
+        if (TriggerOnlyOnce && hasBeenTriggeded) return;
+        StartCoroutine(DialogueCoroutine());
+    }
 }

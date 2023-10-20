@@ -70,7 +70,7 @@ public class EventSystem
     {
         EventArgsInventoryItemRemove iArgs = (EventArgsInventoryItemRemove)args;
         Debug.Log(sender.ToString() + " called InventoryItemRemove ID: " +iArgs.m_ItemID);
-        InventoryItemAdd?.Invoke(sender, args);
+        InventoryItemRemove?.Invoke(sender, args);
     }
 
 
@@ -109,6 +109,15 @@ public class EventSystem
         InteractionPickupItem?.Invoke(sender, args);
     }
 
+
+    public delegate void OnInteractionTriggerDialogue(object sender, EventArgs args);
+    public static event OnInteractionTriggerDialogue InteractionTriggerDialogue;
+    public static void CallOnInteractionTriggerDialogue(object sender, EventArgs args)
+    {
+        EventArgsInteractionTriggerDialogue a = (EventArgsInteractionTriggerDialogue)args;
+        Debug.Log(sender.ToString() + " called InteractionTriggerDialogue ID: " + a.m_DialogueID);
+        InteractionTriggerDialogue?.Invoke(sender, args);
+    }
 
 
 

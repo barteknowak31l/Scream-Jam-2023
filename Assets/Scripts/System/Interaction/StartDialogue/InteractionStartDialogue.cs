@@ -5,14 +5,15 @@ using UnityEngine;
 public class InteractionStartDialogue : MonoBehaviour, Interactable
 {
     public Dialogue dialogue;
+    public bool triggerOnce = true;
     private bool isActivated = false;
 
     public void TriggerInteraction(GameObject interactedObject)
     {
-        if (!isActivated)
-        {
-            isActivated = true;
-            EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id }); // Wywo³anie eventu
-        }
+
+        if (isActivated && triggerOnce) return;
+
+        isActivated = true;
+        EventSystem.CallOnInteractionTriggerDialogue(this, new EventArgsInteractionTriggerDialogue { m_DialogueID = dialogue.m_Id }); // Wywo³anie eventu
     }
 }

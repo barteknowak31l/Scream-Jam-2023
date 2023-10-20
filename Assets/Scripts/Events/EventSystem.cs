@@ -7,16 +7,15 @@ using UnityEngine;
 public class EventSystem
 {
 
-    ///////////////// SYGNATURA EVENTÓW ( patrzeæ gdzie DUZE litery! ) /////////////
+    ///////////////// SYGNATURA EVENTï¿½W ( patrzeï¿½ gdzie DUZE litery! ) /////////////
     //  
-    // public delegate void On<NazwaSystemu><Czynnoœæ>(object sender, EventArgs args)
-    // public static event On<NazwaSystemu><Czynnoœæ> <System><Czynnoœæ>
-    // public static void Call<NazwaSystemu><Czynnoœæ> (object sender, EventArgs args)
+    // public delegate void On<NazwaSystemu><Czynnoï¿½ï¿½>(object sender, EventArgs args)
+    // public static event On<NazwaSystemu><Czynnoï¿½ï¿½> <System><Czynnoï¿½ï¿½>
+    // public static void Call<NazwaSystemu><Czynnoï¿½ï¿½> (object sender, EventArgs args)
     // {
-    //      <System><Czynnoœæ>?.Invoke(sender, args);
+    //      <System><Czynnoï¿½ï¿½>?.Invoke(sender, args);
     // }
     //
-
 
     //////////////////////////////////////////////////////////////////
     ///                                                            ///
@@ -86,6 +85,19 @@ public class EventSystem
     {
         Debug.Log(sender.ToString() + " called JumpscareEnded");
         JumpscareEnded?.Invoke(sender, args);
+    }
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                      INTERACTION EVENTS                    ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
+    public delegate void OnInteractionPickupItem(object sender, EventArgs args);
+    public static event OnInteractionPickupItem InteractionPickupItem;
+    public static void CallOnInteractionPickupItem(object sender, EventArgs args)
+    {
+        EventArgsInteractionPickupItem a = (EventArgsInteractionPickupItem)args;
+        Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
+        InteractionPickupItem?.Invoke(sender, args);
     }
 
 }

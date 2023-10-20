@@ -3,15 +3,17 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.Windows;
 
-namespace NavKeypad { 
+ 
 public class Keypad : MonoBehaviour
 {
     [Header("Events")]
     [SerializeField] private UnityEvent onAccessGranted;
     [SerializeField] private UnityEvent onAccessDenied;
-    [Header("Combination Code (9 Numbers Max)")]
-    [SerializeField] private int keypadCombo = 12345;
+        [Header("Combination Code (9 Numbers Max)")]
+        [SerializeField] private int keypadCombo;
 
     public UnityEvent OnAccessGranted => onAccessGranted;
     public UnityEvent OnAccessDenied => onAccessDenied;
@@ -48,7 +50,6 @@ public class Keypad : MonoBehaviour
         panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
     }
 
-
     //Gets value from pressedbutton
     public void AddInput(string input)
     {
@@ -57,7 +58,7 @@ public class Keypad : MonoBehaviour
         switch (input)
         {
             case "enter":
-                CheckCombo();
+                CheckInput();
                 break;
             default:
                 if (currentInput != null && currentInput.Length == 9) // 9 max passcode size 
@@ -70,7 +71,7 @@ public class Keypad : MonoBehaviour
         }
         
     }
-    public void CheckCombo()
+    public void CheckInput()
     {
         if(int.TryParse(currentInput, out var currentKombo))
         {
@@ -97,11 +98,12 @@ public class Keypad : MonoBehaviour
 
         yield return new WaitForSeconds(displayResultTime);
         displayingResult = false;
-        if (granted) yield break;
+            accessWasGranted = false;
         ClearInput();
         panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
+            
 
-    }
+        }
 
     private void AccessDenied()
     {
@@ -126,5 +128,5 @@ public class Keypad : MonoBehaviour
         audioSource.PlayOneShot(accessGrantedSfx);
     }
 
-}
+
 }

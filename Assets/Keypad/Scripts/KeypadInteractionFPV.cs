@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NavKeypad { 
+
 public class KeypadInteractionFPV : MonoBehaviour
 {
     private Camera cam;
@@ -22,5 +22,4 @@ public class KeypadInteractionFPV : MonoBehaviour
             }
         }
     }
-}
 }

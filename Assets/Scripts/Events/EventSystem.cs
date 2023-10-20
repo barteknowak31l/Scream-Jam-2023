@@ -60,7 +60,8 @@ public class EventSystem
     public static event OnInventoryItemAdd InventoryItemAdd;
     public static void CallInventoryItemAdd(object sender, EventArgs args)
     {
-        Debug.Log(sender.ToString() + " called InventoryItemAdd");
+        EventArgsInventoryItemAdd iArgs = (EventArgsInventoryItemAdd)args;
+        Debug.Log(sender.ToString() + " called InventoryItemAdd id: " + iArgs.m_ItemID);
         InventoryItemAdd?.Invoke(sender, args);
     }
 

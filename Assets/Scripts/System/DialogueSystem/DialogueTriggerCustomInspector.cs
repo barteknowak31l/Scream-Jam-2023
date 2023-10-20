@@ -21,7 +21,12 @@ public class DialogueTriggerCustomInspector : Editor
 
             if (trigger.eventType == DialogueTrigger.SupportedEvents.RemoveItem)
             {
-                trigger.item = (Item)EditorGUILayout.ObjectField("ItemToBeRemoved", trigger.item, typeof(Item), false);
+                trigger.itemToRemove = (Item)EditorGUILayout.ObjectField("ItemToBeRemoved", trigger.itemToRemove, typeof(Item), false);
+            }
+
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.PickItem)
+            {
+                trigger.itemToPick = (Item)EditorGUILayout.ObjectField("ItemToBePicked", trigger.itemToPick, typeof(Item), false);
             }
 
             EditorGUILayout.EndVertical();

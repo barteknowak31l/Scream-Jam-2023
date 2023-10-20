@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     public enum SupportedEvents
     {
-        None, DialogueStart,RemoveItem
+        None, DialogueStart,RemoveItem, PickItem
     }
 
     public string m_Name;
@@ -24,7 +24,10 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
     public SupportedEvents eventType = SupportedEvents.None;
 
     [HideInInspector]
-    public Item item;
+    public Item itemToRemove;
+
+    [HideInInspector]
+    public Item itemToPick;
 
     public Dialogue dialogue;
  
@@ -116,7 +119,17 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
                     if (args is EventArgsInventoryItemRemove iArgs)
                     {
-                        if (iArgs.m_ItemID == item.itemID)
+                        if (iArgs.m_ItemID == itemToRemove.itemID)
+                            StartDialogueCoroutine();
+                    }
+                    break;
+                }
+            case SupportedEvents.PickItem:
+                {
+
+                    if (args is EventArgsInventoryItemAdd iArgs)
+                    {
+                        if (iArgs.m_ItemID == itemToPick.itemID)
                             StartDialogueCoroutine();
                     }
                     break;
@@ -149,6 +162,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     EventSystem.InventoryItemRemove += OnEvent;
                     break;
                 }
+            case SupportedEvents.PickItem:
+                {
+
+                    EventSystem.InventoryItemAdd += OnEvent;
+                    break;
+                }
         }
     }
 
@@ -174,6 +193,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 {
 
                     EventSystem.InventoryItemRemove -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.PickItem:
+                {
+
+                    EventSystem.InventoryItemAdd -= OnEvent;
                     break;
                 }
         }

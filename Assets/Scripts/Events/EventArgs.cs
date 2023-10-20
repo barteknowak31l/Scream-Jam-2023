@@ -44,6 +44,11 @@ public class EventArgsInventoryItemAdd : EventArgs
     public int m_ItemID { get; set; }
 }
 
+public class EventArgsInventoryItemRemove : EventArgs
+{
+    public int m_ItemID { get; set; }
+}
+
 
 
 //////////////////////////////////////////////////////////////////

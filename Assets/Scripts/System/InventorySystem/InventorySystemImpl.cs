@@ -26,11 +26,16 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
 
     public void RemoveItem(int itemID)
     {
+        Debug.Log("Trying to remove item id" + itemID);
         Item itemToRemove = items.Find(item => item.itemID == itemID);
+        Debug.Log("Item to remove "+itemToRemove.itemName);
         if (itemToRemove != null)
         {
             items.Remove(itemToRemove);
+            EventSystem.CallInventoryItemRemove(this,new EventArgsInventoryItemRemove {m_ItemID = itemToRemove.itemID });
         }
+
+
     }
 
     bool InventorySystem.HasItem(int itemID)

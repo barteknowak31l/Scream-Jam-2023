@@ -17,7 +17,6 @@ public class EventSystem
     // }
     //
 
-
     //////////////////////////////////////////////////////////////////
     ///                                                            ///
     ///                      DIALOGUE EVENTS                       ///
@@ -86,16 +85,19 @@ public class EventSystem
     {
         Debug.Log(sender.ToString() + " called JumpscareEnded");
         JumpscareEnded?.Invoke(sender, args);
+    }
     //////////////////////////////////////////////////////////////////
     ///                                                            ///
     ///                      INTERACTION EVENTS                    ///
     ///                                                            ///
     //////////////////////////////////////////////////////////////////
-    public delegate void OnInteraction(object sender, EventArgs args);
-    public static event OnInteraction Interaction;
-    public static void CallOnInteraction(object sender, EventArgs args)
+    public delegate void OnInteractionPickupItem(object sender, EventArgs args);
+    public static event OnInteractionPickupItem InteractionPickupItem;
+    public static void CallOnInteractionPickupItem(object sender, EventArgs args)
     {
-        Interaction?.Invoke(sender, args);
+        EventArgsInteractionPickupItem a = (EventArgsInteractionPickupItem)args;
+        Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
+        InteractionPickupItem?.Invoke(sender, args);
     }
 
 }

@@ -5,6 +5,6 @@ using UnityEngine;
 
 public interface InteractionSystem : CustomSystem
 {
-
-    void TriggerInteraction(GameObject interactedObject);  // Metoda do wywo³ywania interakcji
+    public void CheckInteraction();
 }
+

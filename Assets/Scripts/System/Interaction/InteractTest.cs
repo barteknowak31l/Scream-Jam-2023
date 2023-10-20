@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class InteractableTest : MonoBehaviour, InteractionSystem
+public class InteractableTest : MonoBehaviour, Interactable
 {
     private bool isActivated = false;
     public Item item;
@@ -24,7 +24,7 @@ public class InteractableTest : MonoBehaviour, InteractionSystem
         {
             Debug.Log("test2");
             isActivated = true;
-            EventSystem.CallOnInteraction(this, new EventArgsInteraction { m_Item = item }); // Wywo³anie eventu
+            EventSystem.CallOnInteractionPickupItem(this, new EventArgsInteractionPickupItem { m_Item = item }); // Wywo³anie eventu
             gameObject.SetActive(false); //usuwanie obiektu 
         }
     }

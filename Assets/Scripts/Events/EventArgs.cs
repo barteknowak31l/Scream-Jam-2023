@@ -53,15 +53,16 @@ public class EventArgsInventoryItemAdd : EventArgs
 //////////////////////////////////////////////////////////////////
 public class EventArgsJumpscare : EventArgs
 {
-    public Jumpscare m_Jumpscare{ get; set; }
-    public Transform m_JumpscareTransform{ get; set; }
+    public Jumpscare m_Jumpscare { get; set; }
+    public Transform m_JumpscareTransform { get; set; }
+}
 //////////////////////////////////////////////////////////////////
 ///                                                            ///
 ///                   INTERACTION EVENTS ARGS                  ///
 ///                                                            ///
 //////////////////////////////////////////////////////////////////
 
-public class EventArgsInteraction : EventArgs
+public class EventArgsInteractionPickupItem : EventArgs
 {
     public Item m_Item { get; set; }
 }

@@ -2,8 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpscareTrigger : MonoBehaviour
+public class JumpscareTrigger : MonoBehaviour, EventReaction
 {
+
+    public enum TriggerType
+    {
+        OnTriggerEnter, OnEvent
+    }
+
+    public enum SupportedEvents
+    {
+        None,PickupItem
+    }
+
+    [HideInInspector]
+    public TriggerType triggerType = TriggerType.OnTriggerEnter;
+
+    [HideInInspector]
+    public SupportedEvents eventType = SupportedEvents.None;
+
+    [HideInInspector]
+    public Item item;
+
 
     public Transform m_JumpscarePosition;
     public GameObject m_FlashingScreen;
@@ -17,7 +37,9 @@ public class JumpscareTrigger : MonoBehaviour
     private GameObject m_InstantiatedJumpscare;
 
     public Camera camera;
-    public float RotationSpeed;
+    public float RotationSpeed = 500;
+
+    public string m_Name;
 
 
 
@@ -28,6 +50,8 @@ public class JumpscareTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (triggerType != TriggerType.OnTriggerEnter) return;
+
         if(!m_IsTriggered)
         {
             if(TriggerOnlyOnce && !m_IsTriggeredOnce)
@@ -46,22 +70,10 @@ public class JumpscareTrigger : MonoBehaviour
     {
 
         JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
-        //camera.transform.LookAt(m_JumpscareTransform);
-        //camera.transform.eulerAngles = new Vector3(0, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
-
-/*        Transform t = camera.transform;
-        t.LookAt(m_JumpscarePosition);
-
-        startRotation = camera.transform.rotation;
-        targetRotation = t.rotation;*/
-
 
         m_JumpscarePosition.LookAt(camera.transform);
         m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position, m_JumpscarePosition.rotation ,m_JumpscarePosition);
         m_InstantiatedJumpscare.transform.Translate(m_Jumpscare.offset, Space.World);
-
-       // camera.transform.LookAt(m_JumpscarePosition);
-
 
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
         src.clip = m_Jumpscare.scream;
@@ -124,4 +136,94 @@ public class JumpscareTrigger : MonoBehaviour
 
     }
 
+
+    private void OnValidate()
+    {
+        if (triggerType == TriggerType.OnTriggerEnter)
+        {
+            Collider myCollider = GetComponent<Collider>();
+
+            if (myCollider == null)
+            {
+                Debug.LogError("JumpscareTrigger " + m_Name + " nie ma aktywnego Collider'a!");
+            }
+        }
+    }
+
+    public void OnEvent(object sender, EventArgs args)
+    {
+        switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.PickupItem:
+                {
+
+                    if (args is EventArgsInteractionPickupItem pickupArgs)
+                    {
+                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
+                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
+
+                        if (pickupArgs.m_Item.itemID == item.itemID)
+                            TriggerJumpscare();
+                    }
+                    break;
+                }
+        }
+    }
+
+    public void SubscribeToEvent()
+    {
+        if (triggerType != TriggerType.OnEvent) return;
+
+        switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.PickupItem:
+                {
+                    EventSystem.InteractionPickupItem += OnEvent;
+                    break;
+                }
+        }
+    }
+
+    public void UnsubscribeFromEvent()
+    {
+        if (triggerType != TriggerType.OnEvent) return;
+
+            switch (eventType)
+        {
+            case SupportedEvents.None:
+                {
+                    break;
+                }
+            case SupportedEvents.PickupItem:
+                {
+                    EventSystem.InteractionPickupItem -= OnEvent;
+                    break;
+                }
+        }
+
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToEvent();
+    }
+
+    private void OnDestroy()
+    {
+        UnsubscribeFromEvent();
+    }
+    private void OnDisable()
+    {
+        UnsubscribeFromEvent();
+    }
 }
+
+

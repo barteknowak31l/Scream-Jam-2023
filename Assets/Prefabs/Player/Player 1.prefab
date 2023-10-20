@@ -936,6 +936,8 @@ GameObject:
   - component: {fileID: 744141966138224915}
   - component: {fileID: 7149246884245777650}
   - component: {fileID: -5173209380907999679}
+  - component: {fileID: 6187328322812368237}
+  - component: {fileID: 6616176798420034104}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -1002,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a954c9efc08f9db42a9f7cc7db8c54ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4
+  walkSpeed: 2
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -1029,3 +1031,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2974149c6fb01b409a280581634da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6187328322812368237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060344782593831798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a592d2c13aeb1f94fbc8a5d39b64f707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6616176798420034104
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060344782593831798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e75c17c0eb4c9154ab035c6395132ee9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

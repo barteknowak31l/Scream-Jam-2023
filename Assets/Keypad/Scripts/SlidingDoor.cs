@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NavKeypad
-{
+
     public class SlidingDoor : MonoBehaviour
     {
         [SerializeField] private Animator anim;
@@ -26,4 +25,3 @@ namespace NavKeypad
             anim.SetBool("isOpen", isOpen);
         }
     }
-}

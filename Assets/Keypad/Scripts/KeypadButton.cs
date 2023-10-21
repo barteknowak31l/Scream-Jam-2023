@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NavKeypad
-{
+
     public class KeypadButton : MonoBehaviour
     {
         [Header("Value")]
@@ -62,4 +61,3 @@ namespace NavKeypad
             moving = false;
         }
     }
-}

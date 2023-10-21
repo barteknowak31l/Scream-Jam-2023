@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8355996850434752249}
   - component: {fileID: 9212950116213740905}
   - component: {fileID: 4778490042824454181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8295568444933438975}
   - component: {fileID: 339024734106062019}
   - component: {fileID: 276981438347493671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3636881648609348765}
   - component: {fileID: 8058010314225004714}
   - component: {fileID: 8338652976247368189}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 4612529875923366826}
   - component: {fileID: 380799093255426316}
   - component: {fileID: 3164078733213594284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 7814770634735729575}
   - component: {fileID: 9180708035316370927}
   - component: {fileID: 9131708106215889623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bedroom_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 7459390991374392534}
   - component: {fileID: 7866490142171846831}
   - component: {fileID: 6209697176154019985}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 5386597414043300666}
   - component: {fileID: 4425419976889070054}
   - component: {fileID: 7687110563583814488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 596437111075658817}
   - component: {fileID: 2918853460748713372}
   - component: {fileID: 4639551813661280210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 664385961923156283}
   - component: {fileID: 8781188373569613210}
   - component: {fileID: 6622451249576607829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 5392177238142325313}
   - component: {fileID: 6052312899923211604}
   - component: {fileID: 8769091819768802913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bedroom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 4634836802697676528}
   - component: {fileID: 4251468326221755598}
   - component: {fileID: 1097223121311686092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 4916598161141602696}
   - component: {fileID: 7485527497792583222}
   - component: {fileID: 8674721869729593417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 8743242017744811049}
   - component: {fileID: 4592607928909051608}
   - component: {fileID: 7726183094484473956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1360,7 @@ GameObject:
   - component: {fileID: 6211539171199468076}
   - component: {fileID: 8174750961253427298}
   - component: {fileID: 5494388681278194540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ GameObject:
   - component: {fileID: 6731017635100666840}
   - component: {fileID: 474230725667095472}
   - component: {fileID: 1012903296146913884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 2079008386398964652}
   - component: {fileID: 3813660327925958232}
   - component: {fileID: 1758657010328222385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairLeather (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 8166424955554110985}
   - component: {fileID: 3852780064458142102}
   - component: {fileID: 1583091083078287379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WheelChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1761,7 +1761,7 @@ GameObject:
   - component: {fileID: 672595751339071573}
   - component: {fileID: 2086686292016849131}
   - component: {fileID: 6662453492281979853}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1845,7 +1845,7 @@ GameObject:
   - component: {fileID: 7871149528126114352}
   - component: {fileID: 6540504330292281786}
   - component: {fileID: 4104711720188781035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1951,7 +1951,7 @@ GameObject:
   - component: {fileID: 3059861867608801866}
   - component: {fileID: 1830387358684385092}
   - component: {fileID: 5176029653701242217}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2059,7 +2059,7 @@ GameObject:
   - component: {fileID: 9143262087289262380}
   - component: {fileID: 6343536930869320827}
   - component: {fileID: 5560904383057285290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 834023219273751428}
   - component: {fileID: 4510367223443224439}
   - component: {fileID: 3222525241599470282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2_Window2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2283,7 +2283,7 @@ GameObject:
   - component: {fileID: 2710772994636150168}
   - component: {fileID: 2271846295747298347}
   - component: {fileID: 237754263518164858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2367,7 +2367,7 @@ GameObject:
   - component: {fileID: 5112532318806966032}
   - component: {fileID: 1637307748250795897}
   - component: {fileID: 4484623247589225533}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2473,7 @@ GameObject:
   - component: {fileID: 3669362244047510448}
   - component: {fileID: 4578382027767772681}
   - component: {fileID: 4040295051291618648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2579,7 +2579,7 @@ GameObject:
   - component: {fileID: 5328883180674475226}
   - component: {fileID: 7385330831146216608}
   - component: {fileID: 6154230590208968542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2685,7 +2685,7 @@ GameObject:
   - component: {fileID: 7805050611365618956}
   - component: {fileID: 3600337750204264940}
   - component: {fileID: 2598134700434252022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2790,7 +2790,7 @@ GameObject:
   - component: {fileID: 5859908822817240917}
   - component: {fileID: 1496618983520933792}
   - component: {fileID: 8748319899489640126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2875,7 +2875,7 @@ GameObject:
   - component: {fileID: 2260491248028835796}
   - component: {fileID: 371608420616238231}
   - component: {fileID: 3057896236362785546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2981,7 +2981,7 @@ GameObject:
   - component: {fileID: 6567845461339597622}
   - component: {fileID: 3105797121003706038}
   - component: {fileID: 5471201984325568551}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3087,7 +3087,7 @@ GameObject:
   - component: {fileID: 2900247669655053665}
   - component: {fileID: 4123863335449447594}
   - component: {fileID: 7975237881764791936}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3193,7 +3193,7 @@ GameObject:
   - component: {fileID: 6508184023722347582}
   - component: {fileID: 9195471645719290042}
   - component: {fileID: 3384235077297612803}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heater (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3299,7 +3299,7 @@ GameObject:
   - component: {fileID: 7121080021014183881}
   - component: {fileID: 3493245247311890898}
   - component: {fileID: 2608743057068813957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3404,7 +3404,7 @@ GameObject:
   - component: {fileID: 5145928824710747253}
   - component: {fileID: 2761042510154891909}
   - component: {fileID: 6695844356004707683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3487,7 @@ GameObject:
   - component: {fileID: 8903870644303243540}
   - component: {fileID: 1320927354013358512}
   - component: {fileID: 8270085356576196629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3572,7 @@ GameObject:
   - component: {fileID: 7042735197892345448}
   - component: {fileID: 9025388725524491087}
   - component: {fileID: 4006753524624167359}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3678,7 +3678,7 @@ GameObject:
   - component: {fileID: 4598601823784426503}
   - component: {fileID: 6297359618891182423}
   - component: {fileID: 5843491464159620294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SurgeryWheelBad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3784,7 +3784,7 @@ GameObject:
   - component: {fileID: 6743041269588068092}
   - component: {fileID: 2942315426470298367}
   - component: {fileID: 7980711300098554598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3890,7 +3890,7 @@ GameObject:
   - component: {fileID: 9025664573305209974}
   - component: {fileID: 1721407508356206611}
   - component: {fileID: 6387228372519652811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3996,7 +3996,7 @@ GameObject:
   - component: {fileID: 5084926546962051130}
   - component: {fileID: 164909239110218858}
   - component: {fileID: 417616269604629227}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4101,7 +4101,7 @@ GameObject:
   - component: {fileID: 6183399500839638908}
   - component: {fileID: 7402107751948172646}
   - component: {fileID: 7180217764290759996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4220,7 +4220,7 @@ GameObject:
   - component: {fileID: 1234574186082216996}
   - component: {fileID: 5187611502887400980}
   - component: {fileID: 4558628082968016598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4326,7 +4326,7 @@ GameObject:
   - component: {fileID: 3141618057225406595}
   - component: {fileID: 2707150300739901158}
   - component: {fileID: 2048754300618386352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4432,7 +4432,7 @@ GameObject:
   - component: {fileID: 1608663596377232667}
   - component: {fileID: 6399562929968834677}
   - component: {fileID: 1777090750948631196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4538,7 +4538,7 @@ GameObject:
   - component: {fileID: 5427271308687745681}
   - component: {fileID: 6953002838348441620}
   - component: {fileID: 7622380714705486173}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4644,7 +4644,7 @@ GameObject:
   - component: {fileID: 6819074397825301494}
   - component: {fileID: 8276519688351589955}
   - component: {fileID: 1122588373635399650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4750,7 @@ GameObject:
   - component: {fileID: 313370056256013623}
   - component: {fileID: 1376370881773448429}
   - component: {fileID: 133022266625040890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4856,7 +4856,7 @@ GameObject:
   - component: {fileID: 4325762679976804876}
   - component: {fileID: 7693128203299214232}
   - component: {fileID: 3770666661828892029}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 3091717340782942966}
   - component: {fileID: 7847095202113142290}
   - component: {fileID: 3257938852925994650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5068,7 +5068,7 @@ GameObject:
   - component: {fileID: 651583082309771912}
   - component: {fileID: 2143046339488861132}
   - component: {fileID: 4945317286537777120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bench (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5174,7 +5174,7 @@ GameObject:
   - component: {fileID: 7582887077047376416}
   - component: {fileID: 129995766257757478}
   - component: {fileID: 6415857437538532163}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5282,7 +5282,7 @@ GameObject:
   - component: {fileID: 7477786873569541722}
   - component: {fileID: 6191163544557673622}
   - component: {fileID: 6871323517040672714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5388,7 +5388,7 @@ GameObject:
   - component: {fileID: 8780172284734739186}
   - component: {fileID: 6070511962577274469}
   - component: {fileID: 4343686226968741220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5493,7 +5493,7 @@ GameObject:
   - component: {fileID: 3369578934195869799}
   - component: {fileID: 6610251227026804384}
   - component: {fileID: 5818798975823928777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5578,7 +5578,7 @@ GameObject:
   - component: {fileID: 1623867906193653369}
   - component: {fileID: 8867024238221383649}
   - component: {fileID: 8231025639699838397}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5683,7 +5683,7 @@ GameObject:
   - component: {fileID: 6392483015969427180}
   - component: {fileID: 5622949692924488721}
   - component: {fileID: 5852365300974880735}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5766,7 +5766,7 @@ GameObject:
   - component: {fileID: 3026567582106872074}
   - component: {fileID: 4392888564252221305}
   - component: {fileID: 4915341325025449041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5849,7 +5849,7 @@ GameObject:
   - component: {fileID: 7236373781997734062}
   - component: {fileID: 5512309911796090490}
   - component: {fileID: 5371321848684665988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5968,7 +5968,7 @@ GameObject:
   - component: {fileID: 295358925038041809}
   - component: {fileID: 5957719450164774697}
   - component: {fileID: 345967149963561392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BedFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6074,7 +6074,7 @@ GameObject:
   - component: {fileID: 5408730713881545625}
   - component: {fileID: 2469284807092624196}
   - component: {fileID: 3918352035498522236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heater (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6180,7 +6180,7 @@ GameObject:
   - component: {fileID: 6499581898329618958}
   - component: {fileID: 8794249652892389712}
   - component: {fileID: 7028600606861145014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bench (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 261663064283667546}
   - component: {fileID: 6966171769952686720}
   - component: {fileID: 1127552896345528256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6392,7 +6392,7 @@ GameObject:
   - component: {fileID: 4480287202662863618}
   - component: {fileID: 5316501604094961397}
   - component: {fileID: 2363909947279042122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6498,7 +6498,7 @@ GameObject:
   - component: {fileID: 4276143630191868253}
   - component: {fileID: 4033226447489392681}
   - component: {fileID: 4705348307591323774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SingleLight (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6603,7 +6603,7 @@ GameObject:
   - component: {fileID: 1968308562485041781}
   - component: {fileID: 9000382849894385348}
   - component: {fileID: 1082442535230270503}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6688,7 +6688,7 @@ GameObject:
   - component: {fileID: 4991618808678959841}
   - component: {fileID: 4551649262695803253}
   - component: {fileID: 7953005266958106575}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6794,7 +6794,7 @@ GameObject:
   - component: {fileID: 487399549468446758}
   - component: {fileID: 3544767611686145312}
   - component: {fileID: 4269209805604495699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6900,7 +6900,7 @@ GameObject:
   - component: {fileID: 6411079996918241456}
   - component: {fileID: 566254033464922319}
   - component: {fileID: 608227599018093409}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7006,7 +7006,7 @@ GameObject:
   - component: {fileID: 6547085791976176875}
   - component: {fileID: 4944328558178128222}
   - component: {fileID: 2739899116638645237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7111,7 +7111,7 @@ GameObject:
   - component: {fileID: 6957736463761792748}
   - component: {fileID: 1547171586321150088}
   - component: {fileID: 6873887882303240994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7195,7 +7195,7 @@ GameObject:
   - component: {fileID: 1500896139670714949}
   - component: {fileID: 1668408464311049823}
   - component: {fileID: 3020191629118420706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7315,7 +7315,7 @@ GameObject:
   - component: {fileID: 5451260369646903416}
   - component: {fileID: 7142073558995192536}
   - component: {fileID: 4532436944423723239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7420,7 +7420,7 @@ GameObject:
   - component: {fileID: 7794068132978929237}
   - component: {fileID: 7124153930665117776}
   - component: {fileID: 1645130822142967117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7539,7 +7539,7 @@ GameObject:
   - component: {fileID: 4726310891327518317}
   - component: {fileID: 390224774256826251}
   - component: {fileID: 2636950161396453203}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bedroom_facing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7644,7 +7644,7 @@ GameObject:
   - component: {fileID: 4378948148647859839}
   - component: {fileID: 6950232875611568403}
   - component: {fileID: 7813864291906338483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7728,7 +7728,7 @@ GameObject:
   - component: {fileID: 4700595131315465153}
   - component: {fileID: 8371159043165478168}
   - component: {fileID: 4178116380640092523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7837,7 +7837,7 @@ GameObject:
   - component: {fileID: 8969435891217818330}
   - component: {fileID: 7056813897142933306}
   - component: {fileID: 7153627128525081848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7943,7 +7943,7 @@ GameObject:
   - component: {fileID: 4342279581014973195}
   - component: {fileID: 3136457857131018479}
   - component: {fileID: 12777471456213511}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CurtainsMedic (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8049,7 +8049,7 @@ GameObject:
   - component: {fileID: 320968488222939549}
   - component: {fileID: 1243150954552212421}
   - component: {fileID: 5687761250930595656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crutches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8155,7 +8155,7 @@ GameObject:
   - component: {fileID: 5829241951415245819}
   - component: {fileID: 3114948512331675148}
   - component: {fileID: 7977049470439642324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8261,7 +8261,7 @@ GameObject:
   - component: {fileID: 4398882689331141570}
   - component: {fileID: 5921275700818254646}
   - component: {fileID: 5640273391774869573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8443,7 +8443,7 @@ GameObject:
   - component: {fileID: 2003550300496421443}
   - component: {fileID: 2713829772878318696}
   - component: {fileID: 2502895529330792791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8549,7 +8549,7 @@ GameObject:
   - component: {fileID: 3679981756288611760}
   - component: {fileID: 2199827207759329701}
   - component: {fileID: 669077366870807421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SingleLight (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8655,7 +8655,7 @@ GameObject:
   - component: {fileID: 7423977310782994499}
   - component: {fileID: 3179961561355800448}
   - component: {fileID: 9077023721293458087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heater (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8760,7 +8760,7 @@ GameObject:
   - component: {fileID: 837508544970605510}
   - component: {fileID: 2748789719638561477}
   - component: {fileID: 4705824813636830368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8844,7 +8844,7 @@ GameObject:
   - component: {fileID: 6568603631981639908}
   - component: {fileID: 7328351807750677310}
   - component: {fileID: 5427460465529547551}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8947,7 +8947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8697909964007584676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8986,7 +8986,7 @@ GameObject:
   - component: {fileID: 1466470632616240557}
   - component: {fileID: 902612446727009717}
   - component: {fileID: 3069892591136711864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table_Bed (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9091,7 +9091,7 @@ GameObject:
   - component: {fileID: 8167791703359767216}
   - component: {fileID: 9167204372294559846}
   - component: {fileID: 4429941739690632279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9209,7 +9209,7 @@ GameObject:
   - component: {fileID: 693576220519701410}
   - component: {fileID: 4710788208334933341}
   - component: {fileID: 2328674089394795036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9328,7 +9328,7 @@ GameObject:
   - component: {fileID: 7093999841241440582}
   - component: {fileID: 2698581030353935019}
   - component: {fileID: 5352438884799275857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Suspension (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9412,7 +9412,7 @@ GameObject:
   - component: {fileID: 5500336021855811005}
   - component: {fileID: 3497015245013421190}
   - component: {fileID: 4171740099131771096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9518,7 +9518,7 @@ GameObject:
   - component: {fileID: 6360107209957306611}
   - component: {fileID: 8562140722139505245}
   - component: {fileID: 2418618581016753249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD_V2_Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9624,7 +9624,7 @@ GameObject:
   - component: {fileID: 4481183329185166542}
   - component: {fileID: 1871552296801865580}
   - component: {fileID: 6457717735349628521}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9730,7 +9730,7 @@ GameObject:
   - component: {fileID: 22763139532794754}
   - component: {fileID: 4456703440563868237}
   - component: {fileID: 2500587707022475178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9836,7 +9836,7 @@ GameObject:
   - component: {fileID: 1446669674204524855}
   - component: {fileID: 3596388289830589834}
   - component: {fileID: 5868890120941501608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bed (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9942,7 +9942,7 @@ GameObject:
   - component: {fileID: 4567974861881377932}
   - component: {fileID: 1354525130885779259}
   - component: {fileID: 797209846078495019}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heater (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10048,7 +10048,7 @@ GameObject:
   - component: {fileID: 3717628236516739092}
   - component: {fileID: 2955993550202083799}
   - component: {fileID: 6981733839208228751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSchool (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10153,7 +10153,7 @@ GameObject:
   - component: {fileID: 7843137339532728888}
   - component: {fileID: 244119830231634505}
   - component: {fileID: 2070777675307534950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LampWall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10238,7 +10238,7 @@ GameObject:
   - component: {fileID: 8257305911783917321}
   - component: {fileID: 1126659397706690947}
   - component: {fileID: 8344476986936749476}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Window (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10344,7 +10344,7 @@ GameObject:
   - component: {fileID: 8073072806446921167}
   - component: {fileID: 6380439734506239637}
   - component: {fileID: 1494180767380137512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mattress
   m_TagString: Untagged
   m_Icon: {fileID: 0}

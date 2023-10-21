@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16442fecb833f1f4fbc9bb4ef866b42a, type: 3}
   m_Name: Dialog1 1
   m_EditorClassIdentifier: 
-  m_Id: 0
+  m_Id: 1
   duration: 5
   color: {r: 1, g: 0.65158343, b: 0.5235849, a: 1}
   m_Lines:

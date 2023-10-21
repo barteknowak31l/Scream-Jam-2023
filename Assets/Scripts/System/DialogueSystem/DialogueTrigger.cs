@@ -11,17 +11,26 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     public enum SupportedEvents
     {
-        None, DialogueStart
+        None, DialogueStart,RemoveItem,PickItem,DoorOpened
     }
 
     public string m_Name;
-
+    public bool TriggerOnlyOnce = true;
+    private bool hasBeenTriggeded = false;
     [HideInInspector]
     public TriggerType triggerType = TriggerType.OnTriggerEnter;
 
     [HideInInspector]
     public SupportedEvents eventType = SupportedEvents.None;
 
+    [HideInInspector]
+    public Item itemToRemove;
+
+    [HideInInspector]
+    public Item itemToPick;
+
+    [HideInInspector]
+    public Door door;
 
     public Dialogue dialogue;
  
@@ -51,9 +60,8 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
         if (triggerType != TriggerType.OnTriggerEnter) return;
 
 
-        EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
 
-        StartCoroutine(DialogueCoroutine());
+        StartDialogueCoroutine();
 
 
     }
@@ -70,6 +78,9 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     IEnumerator DialogueCoroutine()
     {
+
+        EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
+        hasBeenTriggeded = true;
         foreach (string lineOfDialogues in dialogue.m_Lines)
         {
 
@@ -99,10 +110,41 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
             case SupportedEvents.DialogueStart:
                 {
 
-                    if (args is EventArgsDialogueStart dialogueArgs)
+                    if (args is EventArgsInteractionTriggerDialogue dialogueArgs)
                     {
                         if(dialogueArgs.m_DialogueID == dialogue.m_Id)
-                            StartCoroutine(DialogueCoroutine());
+                            StartDialogueCoroutine();
+                    }
+                    break;
+                }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    if (args is EventArgsInventoryItemRemove iArgs)
+                    {
+                        if (iArgs.m_ItemID == itemToRemove.itemID)
+                            StartDialogueCoroutine();
+                    }
+                    break;
+                }
+            case SupportedEvents.PickItem:
+                {
+
+                    if (args is EventArgsInventoryItemAdd iArgs)
+                    {
+                        if (iArgs.m_ItemID == itemToPick.itemID)
+                            StartDialogueCoroutine();
+                    }
+                    break;
+                }
+
+            case SupportedEvents.DoorOpened:
+                {
+
+                    if (args is EventArgsDoorUnlocked dArgs)
+                    {
+                        if (dArgs.m_Door.doorID == door.doorID)
+                            StartDialogueCoroutine();
                     }
                     break;
                 }
@@ -125,7 +167,25 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 }
             case SupportedEvents.DialogueStart:
                 {
-                    EventSystem.DialogueStart += OnEvent;
+                    EventSystem.InteractionTriggerDialogue += OnEvent;
+                    break;
+                }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    EventSystem.InventoryItemRemove += OnEvent;
+                    break;
+                }
+            case SupportedEvents.PickItem:
+                {
+
+                    EventSystem.InventoryItemAdd += OnEvent;
+                    break;
+                }
+            case SupportedEvents.DoorOpened:
+                {
+
+                    EventSystem.DoorUnlocked += OnEvent;
                     break;
                 }
         }
@@ -146,7 +206,25 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 }
             case SupportedEvents.DialogueStart:
                 {
-                    EventSystem.DialogueStart -= OnEvent;
+                    EventSystem.InteractionTriggerDialogue -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.RemoveItem:
+                {
+
+                    EventSystem.InventoryItemRemove -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.PickItem:
+                {
+
+                    EventSystem.InventoryItemAdd -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.DoorOpened:
+                {
+
+                    EventSystem.DoorUnlocked -= OnEvent;
                     break;
                 }
         }
@@ -166,4 +244,9 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
         }
     }
 
+    private void StartDialogueCoroutine()
+    {
+        if (TriggerOnlyOnce && hasBeenTriggeded) return;
+        StartCoroutine(DialogueCoroutine());
+    }
 }

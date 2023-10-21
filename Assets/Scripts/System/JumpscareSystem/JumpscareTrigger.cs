@@ -12,7 +12,7 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
 
     public enum SupportedEvents
     {
-        None,PickupItem
+        None,PickupItem,DoorOpened
     }
 
     [HideInInspector]
@@ -24,20 +24,24 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
     [HideInInspector]
     public Item item;
 
+    [HideInInspector]
+    public Door door;
 
-    public Transform m_JumpscarePosition;
+
+    private Transform m_JumpscarePosition;
     public GameObject m_FlashingScreen;
 
     public Jumpscare m_Jumpscare;
-
+    public float m_Delay = 0.0f;
     public bool TriggerOnlyOnce = true;
 
     private bool m_IsTriggered;
     private bool m_IsTriggeredOnce;
     private GameObject m_InstantiatedJumpscare;
 
-    public Camera camera;
-    public float RotationSpeed = 500;
+    private Camera camera;
+    private Transform player;
+    private float RotationSpeed = 500;
 
     public string m_Name;
 
@@ -46,6 +50,9 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
     private void Start()
     {
         JumpscareSystemImpl.Instance.Attach(m_Jumpscare);
+        m_JumpscarePosition = GameObject.FindGameObjectWithTag("JumpscarePosition").transform;
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,12 +63,11 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
         {
             if(TriggerOnlyOnce && !m_IsTriggeredOnce)
             {
-                TriggerJumpscare();
-            }
+                Invoke("TriggerJumpscare", m_Delay);     }
 
             if(!TriggerOnlyOnce)
             {
-                TriggerJumpscare();
+                Invoke("TriggerJumpscare", m_Delay);
             }
         }
     }
@@ -71,9 +77,9 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
 
         JumpscareSystemImpl.Instance.Trigger(m_Jumpscare, m_JumpscarePosition);
 
-        m_JumpscarePosition.LookAt(camera.transform);
-        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, m_JumpscarePosition.position, m_JumpscarePosition.rotation ,m_JumpscarePosition);
-        m_InstantiatedJumpscare.transform.Translate(m_Jumpscare.offset, Space.World);
+        Quaternion rotation = Quaternion.Euler(player.rotation.eulerAngles.x, player.rotation.eulerAngles.y + 180, player.rotation.eulerAngles.z);
+        m_InstantiatedJumpscare = Instantiate(m_Jumpscare.model, player.transform.position + player.transform.forward + m_Jumpscare.offset, rotation ,player.transform);
+
 
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
         src.clip = m_Jumpscare.scream;
@@ -163,11 +169,18 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
 
                     if (args is EventArgsInteractionPickupItem pickupArgs)
                     {
-                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
-                        Debug.Log(pickupArgs.m_Item.itemID + " " + item.itemID);
-
                         if (pickupArgs.m_Item.itemID == item.itemID)
-                            TriggerJumpscare();
+                            Invoke("TriggerJumpscare", m_Delay);
+                    }
+                    break;
+                }
+            case SupportedEvents.DoorOpened:
+                {
+
+                    if (args is EventArgsDoorUnlocked dArgs)
+                    {
+                        if (dArgs.m_Door.doorID == door.doorID)
+                            Invoke("TriggerJumpscare", m_Delay);
                     }
                     break;
                 }
@@ -189,6 +202,11 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
                     EventSystem.InteractionPickupItem += OnEvent;
                     break;
                 }
+            case SupportedEvents.DoorOpened:
+                {
+                    EventSystem.DoorUnlocked += OnEvent;
+                    break;
+                }
         }
     }
 
@@ -205,6 +223,11 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
             case SupportedEvents.PickupItem:
                 {
                     EventSystem.InteractionPickupItem -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.DoorOpened:
+                {
+                    EventSystem.DoorUnlocked -= OnEvent;
                     break;
                 }
         }

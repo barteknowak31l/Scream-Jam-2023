@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7391890130179062071}
   m_Layer: 0
   m_Name: bttn5
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1761916018302555948}
   m_Layer: 0
   m_Name: KeypadVisuals
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 7242000554107755551}
   m_Layer: 0
   m_Name: bttn0
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 8935437802348617227}
   m_Layer: 0
   m_Name: panel
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 2303921292967740188}
   m_Layer: 0
   m_Name: DisplayText
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 2303921293582486211}
   m_Layer: 0
   m_Name: Buttons
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 2303921294220554592}
   m_Layer: 0
   m_Name: DisplayCanvas
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 2303921294396319332}
   m_Layer: 0
   m_Name: Keypad
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   onAccessDenied:
     m_PersistentCalls:
       m_Calls: []
-  keypadCombo: 5567
+  keypadCombo: 666
   accessGrantedText: Granted
   accessDeniedText: Denied
   displayResultTime: 1
@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 8917613728822730183}
   m_Layer: 0
   m_Name: bttn8
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 7276554315346994508}
   m_Layer: 0
   m_Name: bttn7
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1481,7 +1481,7 @@ GameObject:
   - component: {fileID: 9013326905665515994}
   m_Layer: 0
   m_Name: bttn2
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 7444792884915456365}
   m_Layer: 0
   m_Name: bttn9
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1779,7 +1779,7 @@ GameObject:
   - component: {fileID: 7944772037835698005}
   m_Layer: 0
   m_Name: bttnEnter
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1902,7 +1902,7 @@ GameObject:
   - component: {fileID: 5270135792841577756}
   m_Layer: 0
   m_Name: bttn3
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 7441725873264822087}
   m_Layer: 0
   m_Name: bttn1
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: 7479655408705745756}
   m_Layer: 0
   m_Name: bttn4
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2426,7 +2426,7 @@ GameObject:
   - component: {fileID: 8051733617637900960}
   m_Layer: 0
   m_Name: bttn6
-  m_TagString: Untagged
+  m_TagString: Keypad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

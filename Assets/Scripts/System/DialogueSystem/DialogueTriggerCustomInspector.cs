@@ -19,6 +19,21 @@ public class DialogueTriggerCustomInspector : Editor
             EditorGUILayout.BeginVertical();
             trigger.eventType = (DialogueTrigger.SupportedEvents)EditorGUILayout.EnumPopup("EventType", trigger.eventType);
 
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.RemoveItem)
+            {
+                trigger.itemToRemove = (Item)EditorGUILayout.ObjectField("ItemToBeRemoved", trigger.itemToRemove, typeof(Item), false);
+            }
+
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.PickItem)
+            {
+                trigger.itemToPick = (Item)EditorGUILayout.ObjectField("ItemToBePicked", trigger.itemToPick, typeof(Item), false);
+            }
+
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.DoorOpened)
+            {
+                trigger.door = (Door)EditorGUILayout.ObjectField("DoorToBeOpened", trigger.door, typeof(Door), false);
+            }
+
             EditorGUILayout.EndVertical();
         }
 

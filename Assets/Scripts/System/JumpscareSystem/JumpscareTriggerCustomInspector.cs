@@ -24,6 +24,11 @@ public class JumpscareTriggerCustomInspector : Editor
                 trigger.item = (Item)EditorGUILayout.ObjectField("Item", trigger.item, typeof(Item), false);
             }
 
+            if (trigger.eventType == JumpscareTrigger.SupportedEvents.DoorOpened)
+            {
+                trigger.door = (Door)EditorGUILayout.ObjectField("Door", trigger.door, typeof(Door), false);
+            }
+
             EditorGUILayout.EndVertical();
         }
 

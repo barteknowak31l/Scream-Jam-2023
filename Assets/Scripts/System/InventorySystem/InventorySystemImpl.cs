@@ -22,6 +22,13 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
     public void AddItem(Item item)
     {
         items.Add(item);
+        EventSystem.CallInventoryItemAdd(this,new EventArgsInventoryItemAdd {m_ItemID = item.itemID });
+
+    }
+
+    public bool HasItem(Item item)
+    {
+        return items.Contains(item);
     }
 
     public void RemoveItem(int itemID)
@@ -89,4 +96,5 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
         }
         Debug.Log("ITEMS IN EQ: " + msg);
     }
+
 }

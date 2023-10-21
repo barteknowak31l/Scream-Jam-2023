@@ -60,7 +60,8 @@ public class EventSystem
     public static event OnInventoryItemAdd InventoryItemAdd;
     public static void CallInventoryItemAdd(object sender, EventArgs args)
     {
-        Debug.Log(sender.ToString() + " called InventoryItemAdd");
+        EventArgsInventoryItemAdd iArgs = (EventArgsInventoryItemAdd)args;
+        Debug.Log(sender.ToString() + " called InventoryItemAdd id: " + iArgs.m_ItemID);
         InventoryItemAdd?.Invoke(sender, args);
     }
 
@@ -70,7 +71,7 @@ public class EventSystem
     {
         EventArgsInventoryItemRemove iArgs = (EventArgsInventoryItemRemove)args;
         Debug.Log(sender.ToString() + " called InventoryItemRemove ID: " +iArgs.m_ItemID);
-        InventoryItemAdd?.Invoke(sender, args);
+        InventoryItemRemove?.Invoke(sender, args);
     }
 
 
@@ -108,6 +109,31 @@ public class EventSystem
         Debug.Log(sender.ToString() + " called InteractionPickupItem ID: " + a.m_Item.itemID);
         InteractionPickupItem?.Invoke(sender, args);
     }
+
+
+    public delegate void OnInteractionTriggerDialogue(object sender, EventArgs args);
+    public static event OnInteractionTriggerDialogue InteractionTriggerDialogue;
+    public static void CallOnInteractionTriggerDialogue(object sender, EventArgs args)
+    {
+        EventArgsInteractionTriggerDialogue a = (EventArgsInteractionTriggerDialogue)args;
+        Debug.Log(sender.ToString() + " called InteractionTriggerDialogue ID: " + a.m_DialogueID);
+        InteractionTriggerDialogue?.Invoke(sender, args);
+    }
+
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                         DOOR EVENTS                        ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
+
+
     public delegate void OnInteractionDoor(object sender, EventArgs args);
     public static event OnInteractionDoor InteractionDoor;
     public static void CallOnInteractionDoor(object sender, EventArgs args)
@@ -116,4 +142,15 @@ public class EventSystem
         Debug.Log(sender.ToString() + " called InteractionDoor ID: " + a.m_Door.doorID);
         InteractionDoor?.Invoke(sender, args);
     }
+
+    public delegate void OnInteractionDoorUnlocked(object sender, EventArgs args);
+    public static event OnInteractionDoorUnlocked DoorUnlocked;
+    public static void CallOnInteractionDoorUnlocked (object sender, EventArgs args)
+    {
+        EventArgsDoorUnlocked a = (EventArgsDoorUnlocked)args;
+        Debug.Log(sender.ToString() + " called DoorUnlocked ID: " + a.m_Door.doorID);
+        DoorUnlocked?.Invoke(sender, args);
+    }
+
+
 }

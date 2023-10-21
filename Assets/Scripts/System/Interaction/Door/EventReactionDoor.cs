@@ -6,19 +6,19 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
 {
 
     public Door door; // item na ktorym ma zostac wykonana interakcja
-    public bool isOpen = false;
-
-    public string doorOpen;
-    public string doorClose;
+    public Animator animator;
 
     // lista opcji, ktore maja sie wykonac po evencie, mozna dodac inne opcje, potem wystarczy w 
     // edytorze wybrac opcje i wszystko sie samo wykona - mozna dostosowac wtedy do roznych scenariuszy co ma sie wykonac
     public enum EventReactionDoorOptions
     {
-        InteractWithDoor = 0,
+        OpenDoor = 0,
         PlaySound = 1,
-        Destroy = 2
+        OpenIfKeyInEq
     }
+
+    //[HideInInspector]
+    public Item key;
 
     // lista tych opcji
     public List<EventReactionDoorOptions> options;
@@ -55,12 +55,8 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
             {
                 switch (option) // w zaleznosci od opcji wykonuje odpowienia reakcje
                 {
-                    case EventReactionDoorOptions.Destroy:
-                        {
-                            OnDestroyOption();
-                            break;
-                        }
-                    case EventReactionDoorOptions.InteractWithDoor:
+
+                    case EventReactionDoorOptions.OpenDoor:
                         {
                             OnInteractionWithDoor(intargs.m_Door);
                             break;
@@ -68,6 +64,11 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
                     case EventReactionDoorOptions.PlaySound:
                         {
                             OnPlaySoundOption();
+                            break;
+                        }
+                    case EventReactionDoorOptions.OpenIfKeyInEq:
+                        {
+                            OnOpenDoorWithKey();
                             break;
                         }
                 }
@@ -79,10 +80,6 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
 
     // a tu definicje poszczegolnych akcji
 
-    private void OnDestroyOption()
-    {
-
-    }
 
     private void OnPlaySoundOption()
     {
@@ -92,7 +89,27 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
 
     private void OnInteractionWithDoor(Door door)
     {
+        Debug.Log("Opened door " + door.doorID);
+        EventSystem.CallOnInteractionDoorUnlocked(this, new EventArgsDoorUnlocked { m_Door = door });
+        PlayOpenAnim();
+    }
 
+    private void OnOpenDoorWithKey()
+    {
+        Debug.Log("Trying to unlock door id: " + door.doorID);
+        if(InventorySystemImpl.Instance.HasItem(key))
+        {
+            Debug.Log("Opened door " + door.doorID + " with key id: " + key.itemID);
+            EventSystem.CallOnInteractionDoorUnlocked(this, new EventArgsDoorUnlocked { m_Door = door });
+            PlayOpenAnim();
+
+        }
+    }
+
+
+    private void PlayOpenAnim()
+    {
+        animator.Play("open");
     }
 
 
@@ -112,9 +129,9 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
 
 
 // Start is called before the first frame update
-void Start()
+    void Start()
     {
-        
+        animator = GetComponent<Animator>();  
     }
 
     // Update is called once per frame

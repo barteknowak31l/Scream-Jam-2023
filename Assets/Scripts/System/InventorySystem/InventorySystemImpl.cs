@@ -26,6 +26,11 @@ public class InventorySystemImpl : MonoBehaviour, InventorySystem
 
     }
 
+    public bool HasItem(Item item)
+    {
+        return items.Contains(item);
+    }
+
     public void RemoveItem(int itemID)
     {
         Debug.Log("Trying to remove item id" + itemID);

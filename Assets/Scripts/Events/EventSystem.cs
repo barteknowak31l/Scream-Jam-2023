@@ -127,7 +127,11 @@ public class EventSystem
 
 
 
-
+    //////////////////////////////////////////////////////////////////
+    ///                                                            ///
+    ///                         DOOR EVENTS                        ///
+    ///                                                            ///
+    //////////////////////////////////////////////////////////////////
 
 
     public delegate void OnInteractionDoor(object sender, EventArgs args);
@@ -138,4 +142,15 @@ public class EventSystem
         Debug.Log(sender.ToString() + " called InteractionDoor ID: " + a.m_Door.doorID);
         InteractionDoor?.Invoke(sender, args);
     }
+
+    public delegate void OnInteractionDoorUnlocked(object sender, EventArgs args);
+    public static event OnInteractionDoorUnlocked DoorUnlocked;
+    public static void CallOnInteractionDoorUnlocked (object sender, EventArgs args)
+    {
+        EventArgsDoorUnlocked a = (EventArgsDoorUnlocked)args;
+        Debug.Log(sender.ToString() + " called DoorUnlocked ID: " + a.m_Door.doorID);
+        DoorUnlocked?.Invoke(sender, args);
+    }
+
+
 }

@@ -77,7 +77,22 @@ public class EventArgsInteractionTriggerDialogue : EventArgs
     public int m_DialogueID { get; set; }
 }
 
+
+
+
+//////////////////////////////////////////////////////////////////
+///                                                            ///
+///                      DOOR EVENTS ARGS                      ///
+///                                                            ///
+//////////////////////////////////////////////////////////////////
+
 public class EventArgsInteractionDoor : EventArgs
 {
     public Door m_Door { get; set; } 
+}
+
+
+public class EventArgsDoorUnlocked : EventArgs
+{
+    public Door m_Door { get; set; }
 }

@@ -14,7 +14,7 @@ public class EventReactionDoorCustomInspector : Editor
 
         if (trigger.options.Contains(EventReactionDoor.EventReactionDoorOptions.OpenIfKeyInEq))
         {
-           trigger.key = (Item)EditorGUILayout.ObjectField("Key", trigger.key, typeof(Item), false);
+          // trigger.key = (Item)EditorGUILayout.ObjectField("Key", trigger.key, typeof(Item), false);
         }
 
     }

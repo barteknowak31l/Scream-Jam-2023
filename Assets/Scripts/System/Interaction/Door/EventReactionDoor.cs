@@ -17,7 +17,7 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
         OpenIfKeyInEq
     }
 
-    [HideInInspector]
+    //[HideInInspector]
     public Item key;
 
     // lista tych opcji

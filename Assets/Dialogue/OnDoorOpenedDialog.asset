@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16442fecb833f1f4fbc9bb4ef866b42a, type: 3}
   m_Name: OnDoorOpenedDialog
   m_EditorClassIdentifier: 
-  m_Id: 0
-  duration: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
-  m_Lines: []
+  m_Id: 6
+  duration: 2
+  color: {r: 1, g: 0, b: 0, a: 1}
+  m_Lines:
+  - NIE DRZWI NIE

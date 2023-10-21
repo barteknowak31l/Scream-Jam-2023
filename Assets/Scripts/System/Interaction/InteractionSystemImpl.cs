@@ -69,7 +69,7 @@ public class InteractionSystemImpl : MonoBehaviour, InteractionSystem
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out Interactable interactObj))
                 {
-                    Component[] allComponents = hitInfo.collider.gameObject.GetComponents<Component>();
+                    Component[] allComponents = GetComponents<Component>();
                     foreach(Component c in allComponents)
                     {
                         if(c is Interactable i)

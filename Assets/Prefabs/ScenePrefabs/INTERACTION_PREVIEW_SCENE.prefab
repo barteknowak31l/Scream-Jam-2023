@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 6576591367910208504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5289340100992746146
 MeshFilter:
@@ -170,7 +170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2479616895306201128
 MeshFilter:
@@ -261,8 +261,62 @@ MonoBehaviour:
   eventType: 0
   itemToRemove: {fileID: 0}
   itemToPick: {fileID: 0}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 0}
   dialogue: {fileID: 11400000, guid: 77b38e52d96d5674282ba12d74ddc132, type: 2}
+--- !u!1 &1347537553901327826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3432836163471819666}
+  - component: {fileID: 8553153075112352614}
+  m_Layer: 0
+  m_Name: DialogTriggerOnItemNotInEq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3432836163471819666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347537553901327826}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.25, y: 1.63, z: -2.334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8100849258862451174}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8553153075112352614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347537553901327826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837e5d388335d084b987ad7a281dc8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: OnNoItem
+  TriggerOnlyOnce: 1
+  triggerType: 1
+  eventType: 5
+  itemToRemove: {fileID: 0}
+  itemToPick: {fileID: 11400000, guid: e1e65cce90a07644db22b4981951c046, type: 2}
+  itemNotInEq: {fileID: 11400000, guid: 122690c990fb14242b22482aa359c9ab, type: 2}
+  door: {fileID: 11400000, guid: 8f7540a9d77d5e64890e696a7bc25609, type: 2}
+  dialogue: {fileID: 11400000, guid: bd7460911e41f3c48b0b5762f0db2633, type: 2}
 --- !u!1 &1471602658892326260
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3998564842955777428
 MonoBehaviour:
@@ -313,6 +367,7 @@ MonoBehaviour:
   eventType: 4
   itemToRemove: {fileID: 0}
   itemToPick: {fileID: 11400000, guid: e1e65cce90a07644db22b4981951c046, type: 2}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 11400000, guid: 8f7540a9d77d5e64890e696a7bc25609, type: 2}
   dialogue: {fileID: 11400000, guid: b6956ef907f524744b92adde588eab12, type: 2}
 --- !u!1 &1633207661117629011
@@ -350,16 +405,7 @@ Transform:
   - {fileID: 6388321390250644953}
   - {fileID: 2634677248034995091}
   - {fileID: 8100849258862451174}
-  - {fileID: 6301387191105753570}
-  - {fileID: 7718234890080503281}
-  - {fileID: 8280747791641711675}
-  - {fileID: 529322594416968345}
-  - {fileID: 1950851757159706691}
-  - {fileID: 1520709079370202548}
   - {fileID: 6576591367910208504}
-  - {fileID: 7437833148503375163}
-  - {fileID: 1743024502221247446}
-  - {fileID: 2434196718236192116}
   - {fileID: 592983457989639936}
   - {fileID: 494105973719432654}
   - {fileID: 3152039329516884403}
@@ -452,7 +498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 6576591367910208504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3152678040794387294
 MeshFilter:
@@ -712,7 +758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &196565859558868186
 MonoBehaviour:
@@ -732,6 +778,7 @@ MonoBehaviour:
   eventType: 3
   itemToRemove: {fileID: 0}
   itemToPick: {fileID: 11400000, guid: e1e65cce90a07644db22b4981951c046, type: 2}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 0}
   dialogue: {fileID: 11400000, guid: 7af7b606057b90b41973a1d6dd6766cf, type: 2}
 --- !u!1 &3203578368016525435
@@ -762,7 +809,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6301387191105753570}
+  - {fileID: 7718234890080503281}
+  - {fileID: 8280747791641711675}
+  - {fileID: 529322594416968345}
+  - {fileID: 1950851757159706691}
+  - {fileID: 1520709079370202548}
+  - {fileID: 3432836163471819666}
   m_Father: {fileID: 1161993838836152663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3917821732944744796
@@ -798,7 +852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1542798827491433564
 MeshFilter:
@@ -889,6 +943,7 @@ MonoBehaviour:
   eventType: 0
   itemToRemove: {fileID: 0}
   itemToPick: {fileID: 0}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 0}
   dialogue: {fileID: 11400000, guid: 352886e9137e7c244bfdbb87d26fe41d, type: 2}
 --- !u!1 &4450030075090422584
@@ -1308,7 +1363,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7437833148503375163}
+  - {fileID: 1743024502221247446}
+  - {fileID: 2434196718236192116}
   m_Father: {fileID: 1161993838836152663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6218339689977301880
@@ -1549,7 +1607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7425807422591125883
 MonoBehaviour:
@@ -1569,6 +1627,7 @@ MonoBehaviour:
   eventType: 1
   itemToRemove: {fileID: 0}
   itemToPick: {fileID: 0}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 0}
   dialogue: {fileID: 11400000, guid: 0f104067985ebde45b7995839561f3b3, type: 2}
 --- !u!1 &8197088800706952346
@@ -1601,7 +1660,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 8100849258862451174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2717375324737710837
 MonoBehaviour:
@@ -1621,6 +1680,7 @@ MonoBehaviour:
   eventType: 2
   itemToRemove: {fileID: 11400000, guid: 122690c990fb14242b22482aa359c9ab, type: 2}
   itemToPick: {fileID: 11400000, guid: 058619a2b0f4dc548b0e45e0c56a43c2, type: 2}
+  itemNotInEq: {fileID: 0}
   door: {fileID: 0}
   dialogue: {fileID: 11400000, guid: dfd0a31663dacea46a5251f56fd72565, type: 2}
 --- !u!1 &8722359012667585870
@@ -1657,7 +1717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161993838836152663}
+  m_Father: {fileID: 6576591367910208504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4783970018092043877
 MeshFilter:
@@ -2129,7 +2189,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7258931889119407495, guid: e76f1b1bbb9345a4e8bc697153d59028,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7728289730166690747}
   m_SourcePrefab: {fileID: 100100000, guid: e76f1b1bbb9345a4e8bc697153d59028, type: 3}
 --- !u!4 &5184482611784326724 stripped
 Transform:
@@ -2143,6 +2207,26 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 3804657415190742725}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5796189711004838722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7258931889119407495, guid: e76f1b1bbb9345a4e8bc697153d59028,
+    type: 3}
+  m_PrefabInstance: {fileID: 3804657415190742725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7728289730166690747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5796189711004838722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a302bc7fbc2df4aa397428d3bf037d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnlyOnce: 0
+  item: {fileID: 11400000, guid: 122690c990fb14242b22482aa359c9ab, type: 2}
 --- !u!1001 &8998332644686632674
 PrefabInstance:
   m_ObjectHideFlags: 0

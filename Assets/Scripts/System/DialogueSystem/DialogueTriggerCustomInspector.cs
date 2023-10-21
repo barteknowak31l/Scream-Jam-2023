@@ -34,6 +34,11 @@ public class DialogueTriggerCustomInspector : Editor
                 trigger.door = (Door)EditorGUILayout.ObjectField("DoorToBeOpened", trigger.door, typeof(Door), false);
             }
 
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.ItemNotInEq)
+            {
+                trigger.itemNotInEq = (Item)EditorGUILayout.ObjectField("IntemNotInEq", trigger.itemNotInEq, typeof(Item), false);
+            }
+
             EditorGUILayout.EndVertical();
         }
 

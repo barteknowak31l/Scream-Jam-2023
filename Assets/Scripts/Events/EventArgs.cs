@@ -50,6 +50,11 @@ public class EventArgsInventoryItemRemove : EventArgs
 }
 
 
+public class EventArgsInventoryItemNotInEq : EventArgs
+{
+    public int m_ItemID { get; set; }
+}
+
 
 //////////////////////////////////////////////////////////////////
 ///                                                            ///
@@ -96,3 +101,5 @@ public class EventArgsDoorUnlocked : EventArgs
 {
     public Door m_Door { get; set; }
 }
+
+

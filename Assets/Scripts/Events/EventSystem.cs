@@ -74,6 +74,15 @@ public class EventSystem
         InventoryItemRemove?.Invoke(sender, args);
     }
 
+    public delegate void OnInventoryItemNotInEq(object sender, EventArgs args);
+    public static event OnInventoryItemRemove InventoryItemNotInEq;
+    public static void CallInventoryItemNotInEq(object sender, EventArgs args)
+    {
+        EventArgsInventoryItemNotInEq iArgs = (EventArgsInventoryItemNotInEq)args;
+        Debug.Log(sender.ToString() + " called InventoryItemNotInEq ID: " + iArgs.m_ItemID);
+        InventoryItemNotInEq?.Invoke(sender, args);
+    }
+
 
     //////////////////////////////////////////////////////////////////
     ///                                                            ///

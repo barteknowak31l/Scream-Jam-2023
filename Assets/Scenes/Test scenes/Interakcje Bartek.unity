@@ -131,6 +131,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100298856420888811, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100298856420888811, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Keypad
+      objectReference: {fileID: 0}
     - target: {fileID: 1161993838836152663, guid: 984601850b4598e4ea2c6075dd1d40d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -185,6 +195,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: INTERACTION_PREVIEW_SCENE
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063363142781231998, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728289730166690747, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: TriggerOnlyOnce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135093735751120579, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353226790449306957, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553153075112352614, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: TriggerOnlyOnce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824350926887082438, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853813534661210810, guid: 984601850b4598e4ea2c6075dd1d40d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

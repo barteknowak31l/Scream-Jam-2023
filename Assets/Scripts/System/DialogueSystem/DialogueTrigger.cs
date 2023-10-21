@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     public enum SupportedEvents
     {
-        None, DialogueStart,RemoveItem, PickItem
+        None, DialogueStart,RemoveItem,PickItem,DoorOpened
     }
 
     public string m_Name;
@@ -28,6 +28,9 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
 
     [HideInInspector]
     public Item itemToPick;
+
+    [HideInInspector]
+    public Door door;
 
     public Dialogue dialogue;
  
@@ -134,6 +137,17 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     }
                     break;
                 }
+
+            case SupportedEvents.DoorOpened:
+                {
+
+                    if (args is EventArgsDoorUnlocked dArgs)
+                    {
+                        if (dArgs.m_Door.doorID == door.doorID)
+                            StartDialogueCoroutine();
+                    }
+                    break;
+                }
         }
     }
 
@@ -168,6 +182,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     EventSystem.InventoryItemAdd += OnEvent;
                     break;
                 }
+            case SupportedEvents.DoorOpened:
+                {
+
+                    EventSystem.DoorUnlocked += OnEvent;
+                    break;
+                }
         }
     }
 
@@ -199,6 +219,12 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                 {
 
                     EventSystem.InventoryItemAdd -= OnEvent;
+                    break;
+                }
+            case SupportedEvents.DoorOpened:
+                {
+
+                    EventSystem.DoorUnlocked -= OnEvent;
                     break;
                 }
         }

@@ -29,6 +29,11 @@ public class DialogueTriggerCustomInspector : Editor
                 trigger.itemToPick = (Item)EditorGUILayout.ObjectField("ItemToBePicked", trigger.itemToPick, typeof(Item), false);
             }
 
+            if (trigger.eventType == DialogueTrigger.SupportedEvents.DoorOpened)
+            {
+                trigger.door = (Door)EditorGUILayout.ObjectField("DoorToBeOpened", trigger.door, typeof(Door), false);
+            }
+
             EditorGUILayout.EndVertical();
         }
 

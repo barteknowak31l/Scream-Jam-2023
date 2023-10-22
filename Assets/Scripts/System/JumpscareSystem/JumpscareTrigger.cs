@@ -84,6 +84,7 @@ public class JumpscareTrigger : MonoBehaviour, EventReaction
         AudioSource src = m_InstantiatedJumpscare.AddComponent<AudioSource>();
         src.clip = m_Jumpscare.scream;
         src.Play();
+        
 
         m_FlashingScreen.SetActive(true);
 

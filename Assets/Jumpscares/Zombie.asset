@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   model: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-  scream: {fileID: 0}
-  duration: 1
+  scream: {fileID: 8300000, guid: 94bdc197cbff4a8439b4b68c5109e2b2, type: 3}
+  duration: 2
   animation: {fileID: 0}
-  offset: {x: 0, y: -1, z: 0}
+  offset: {x: 0, y: -1.05, z: 0}

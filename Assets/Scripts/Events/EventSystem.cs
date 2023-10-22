@@ -27,7 +27,8 @@ public class EventSystem
     public static event OnDialogueStart DialogueStart;
     public static void CallDialogueStart(object sender, EventArgs args)
     {
-        Debug.Log(sender.ToString() + " called DialogueStart");
+        EventArgsDialogueStart d = (EventArgsDialogueStart)args;
+        Debug.Log(sender.ToString() + " called DialogueStart id: " +d.m_DialogueID);
         DialogueStart?.Invoke(sender, args);
     }
 
@@ -158,7 +159,7 @@ public class EventSystem
     {
         EventArgsDoorUnlocked a = (EventArgsDoorUnlocked)args;
         Debug.Log(sender.ToString() + " called DoorUnlocked ID: " + a.m_Door.doorID);
-        DoorUnlocked?.Invoke(sender, args);
+        DoorUnlocked?.Invoke(sender, a);
     }
 
 

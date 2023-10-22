@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16442fecb833f1f4fbc9bb4ef866b42a, type: 3}
+  m_Name: LAB_DOOR_OPENED
+  m_EditorClassIdentifier: 
+  m_Id: 33
+  duration: 3
+  color: {r: 0, g: 0, b: 0, a: 0}
+  m_Lines:
+  - 'Joe: Who the fuck are you, why you treat me like garbage'
+  - '???: Because you''re just poor useless human soul...'
+  - 'Mammon: And I AM THE GREAT MAMMON, son of the Devli!'
+  - 'Mammon: Don''t lose focus  and finish your job, I hate being trapped in your
+    soul'
+  - 'Mammon: Just go to that fucking lab'

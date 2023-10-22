@@ -147,6 +147,7 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
                     if (args is EventArgsDoorUnlocked dArgs)
                     {
                         if (dArgs.m_Door.doorID == door.doorID)
+                        if (dArgs.m_Door.doorID == door.doorID)
                             StartDialogueCoroutine();
                     }
                     break;
@@ -274,4 +275,26 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
         if (TriggerOnlyOnce && hasBeenTriggeded) return;
         StartCoroutine(DialogueCoroutine());
     }
+
+
+
+    // KEYPAD TRIGGER
+    private int errors = 0;
+    private bool triggeredKeypadErrorMessage = false;
+
+    private void Update()
+    {
+        if(errors == 1 && triggeredKeypadErrorMessage == false)
+        {
+            triggeredKeypadErrorMessage = true;
+            StartDialogueCoroutine();
+        }
+    }
+
+    public void ReportError()
+    {
+        errors = 1;
+    }
+
+
 }

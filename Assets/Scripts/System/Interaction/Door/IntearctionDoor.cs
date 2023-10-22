@@ -18,18 +18,21 @@ public class IntearctionDoor : MonoBehaviour, Interactable
     public void TriggerInteraction(GameObject interactedObject)
     {
 
+
         if (isActivated && unlocked) return;
+
+
+
 
         isActivated = true;
         EventSystem.CallOnInteractionDoor(this, new EventArgsInteractionDoor { m_Door = door }); // Wywo³anie eventu
     }
 
-
     public void OnDoorUnlocked(object sender, EventArgs args)
     {
-        if(args is EventArgsDoorUnlocked dArgs)
+        if (args is EventArgsDoorUnlocked dArgs)
         {
-            if(door.doorID == dArgs.m_Door.doorID)
+            if (door.doorID == dArgs.m_Door.doorID)
             {
                 unlocked = true;
             }

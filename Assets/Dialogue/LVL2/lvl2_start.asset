@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16442fecb833f1f4fbc9bb4ef866b42a, type: 3}
+  m_Name: lvl2_start
+  m_EditorClassIdentifier: 
+  m_Id: 0
+  duration: 4
+  color: {r: 1, g: 0, b: 0, a: 1}
+  m_Lines:
+  - '???: What the hell were you thinking? Now we are one. We need to find a way
+    out of here.'
+  - '???: You should now move your ass to the doll room.'
+  - 'Joe: Who Are you?'
+  - 'Joe: Well, let''s find a room with dools and see what''s going on there.'

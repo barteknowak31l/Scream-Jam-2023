@@ -14,6 +14,23 @@ public class DialogueCanvas : MonoBehaviour
 
         text.text = tekst;
         text.color = color;
+
+        if(tekst.Contains("Joe:"))
+        {
+            text.color = Color.yellow;
+        }
+
+        if (tekst.Contains("???:") || tekst.Contains("Mammon:"))
+        {
+            text.color = Color.red;
+        }
+
+        if (tekst.Contains("Narrator:") )
+        {
+            text.color = Color.white;
+        }
+
+
     }
 
 

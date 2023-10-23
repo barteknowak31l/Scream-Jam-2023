@@ -16,5 +16,5 @@ MonoBehaviour:
   duration: 3
   color: {r: 1, g: 1, b: 0, a: 1}
   m_Lines:
-  - 'Joe: Did you hear that? '
-  - 'Joe: Let''s see if this elevator works !'
+  - 'Joe: What was that? '
+  - 'Joe: Let''s see if this elevator works'

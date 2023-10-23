@@ -26,6 +26,7 @@ public class EventReactionDoor : MonoBehaviour, EventReaction
     public Dialogue dialog;
 
     public AudioSource source;
+    public AudioSource sourceLocked;
 
     // lista tych opcji
     public List<EventReactionDoorOptions> options;
@@ -145,8 +146,10 @@ private void OnInteractionWithDoor(Door door)
             Debug.Log("Opened door " + door.doorID + " with key id: " + key.itemID);
             EventSystem.CallOnInteractionDoorUnlocked(this, new EventArgsDoorUnlocked { m_Door = door });
             PlayOpenAnim();
-
+            source.Play();
+            return;
         }
+        sourceLocked.Play();
     }
 
 

@@ -18,6 +18,7 @@ public class EventReactionPickup : MonoBehaviour, EventReaction
 
     // lista tych opcji
     public List<EventReactionPickupOptions> options;
+    public AudioSource source;
 
 
     // subskrypcja eventu - ta funkcja musi byc wywolana w onEnable
@@ -82,8 +83,7 @@ public class EventReactionPickup : MonoBehaviour, EventReaction
 
     private  void OnPlaySoundOption()
     {
-        //TO DO
-        // wywolac event dzwiekowy jak juz bedzie system dzwiekow
+        source.Play();
     }
 
     private void OnAddToInventoryOption(Item item)

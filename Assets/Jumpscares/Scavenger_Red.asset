@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d35a68441911b44b81c8b228e145e8f, type: 3}
+  m_Name: Scavenger_Red
+  m_EditorClassIdentifier: 
+  name: scavenger_red
+  model: {fileID: 2168068442106150883, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
+  scream: {fileID: 8300000, guid: 94bdc197cbff4a8439b4b68c5109e2b2, type: 3}
+  duration: 3
+  animation: {fileID: 0}
+  offset: {x: 0, y: -0.95, z: 0}

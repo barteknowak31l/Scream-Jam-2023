@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LAB_DOOR_OPENED
   m_EditorClassIdentifier: 
   m_Id: 33
-  duration: 3
+  duration: 4
   color: {r: 0, g: 0, b: 0, a: 0}
   m_Lines:
   - 'Joe: Who the fuck are you, why you treat me like garbage'

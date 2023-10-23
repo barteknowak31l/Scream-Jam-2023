@@ -36,7 +36,27 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
     public Door door;
 
     public Dialogue dialogue;
- 
+
+    public bool isDialog = false;
+    public int lineNumber = 0;
+    private void skipDialog()
+    {
+        if(lineNumber + 1 <= dialogue.m_Lines.Count)
+        {
+            StopAllCoroutines();
+            lineNumber++;
+            StartCoroutine(DialogueSkippedCoroutine());
+        }
+        else
+        {
+            lineNumber = -1;
+            isDialog = false;
+            EventSystem.CallDialogueEnd(this, new EventArgsDialogueEnd { m_DialogueID = dialogue.m_Id });
+            FindObjectOfType<DialogueCanvas>().Canvas("", dialogue.color);
+        }
+    }
+
+
     private void Start()
     {
         SubscribeToEvent();
@@ -83,24 +103,51 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
     {
 
         EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
+        isDialog = true;
+        lineNumber = -1;
         hasBeenTriggeded = true;
         foreach (string lineOfDialogues in dialogue.m_Lines)
         {
-
             EventSystem.CallDialogueNext(this, new EventArgsDialogueNext { m_DialogueID = dialogue.m_Id, m_CurrentLine  = dialogue.m_CurrentLine  });
-
             FindObjectOfType<DialogueCanvas>().Canvas(lineOfDialogues, dialogue.color);
+            lineNumber++;
             yield return new WaitForSeconds(dialogue.duration);
 
         }
         
         EventSystem.CallDialogueEnd(this, new EventArgsDialogueEnd { m_DialogueID = dialogue.m_Id });
+        isDialog = false;
 
 
         FindObjectOfType<DialogueCanvas>().Canvas("", dialogue.color);
 
 
     }
+
+    IEnumerator DialogueSkippedCoroutine()
+    {
+
+        for(int i = lineNumber; i < dialogue.m_Lines.Count; i++)
+        {
+
+            EventSystem.CallDialogueNext(this, new EventArgsDialogueNext { m_DialogueID = dialogue.m_Id, m_CurrentLine = dialogue.m_CurrentLine });
+
+            string line = dialogue.m_Lines[i];
+            FindObjectOfType<DialogueCanvas>().Canvas(line, dialogue.color);
+            yield return new WaitForSeconds(dialogue.duration);
+            lineNumber++;
+
+
+        }
+        EventSystem.CallDialogueEnd(this, new EventArgsDialogueEnd { m_DialogueID = dialogue.m_Id });
+        isDialog = false;
+
+
+        FindObjectOfType<DialogueCanvas>().Canvas("", dialogue.color);
+
+
+    }
+
 
     public void OnEvent(object sender, EventArgs args)
     {
@@ -289,6 +336,13 @@ public class DialogueTrigger : MonoBehaviour, EventReaction
             triggeredKeypadErrorMessage = true;
             StartDialogueCoroutine();
         }
+
+        if(isDialog && Input.GetKeyDown(KeyCode.Space))
+        {
+            skipDialog();
+        }
+
+
     }
 
     public void ReportError()

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16442fecb833f1f4fbc9bb4ef866b42a, type: 3}
+  m_Name: lvl1_info
+  m_EditorClassIdentifier: 
+  m_Id: 2137
+  duration: 7
+  color: {r: 1, g: 1, b: 1, a: 1}
+  m_Lines:
+  - 'Narrator: You open a book with pentagram on the cover, you open it on a random
+    page and read: '
+  - '"Mammon in the New Testament of the Bible is commonly thought to mean money,
+    material wealth, or any entity that promises wealth, and is associated with the
+    greedy pursuit of gain."'
+  - '"he Gospel of Matthew and the Gospel of Luke both quote Jesus using the word
+    in a phrase often rendered in English as "You cannot serve both God and mammon."
+    "'

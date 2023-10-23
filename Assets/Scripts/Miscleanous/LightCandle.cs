@@ -7,6 +7,7 @@ public class LightCandle : MonoBehaviour, Interactable
     public GameObject fire;
     public Item lighter;
     public bool isLit = false;
+    public AudioSource src;
 
     public void TriggerInteraction(GameObject interactedObject)
     {
@@ -14,6 +15,7 @@ public class LightCandle : MonoBehaviour, Interactable
         {
             fire.SetActive(true);
             isLit = true;
+            src.Play();
         }
 
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RIT_DOOR_OPEN
   m_EditorClassIdentifier: 
   m_Id: 81
-  duration: 2.5
+  duration: 4
   color: {r: 0, g: 0, b: 0, a: 0}
   m_Lines:
   - 'Mammon: Finally... Find the circle and finish it'

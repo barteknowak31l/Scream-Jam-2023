@@ -8,6 +8,7 @@ public class Flashlight : MonoBehaviour
     new Light light;
     Animator animator;
 
+    public FlashlightPlaySound sound;
 
     public KeyCode flashlightKey = KeyCode.F;
     public KeyCode flickeringTrigger = KeyCode.U;
@@ -15,11 +16,14 @@ public class Flashlight : MonoBehaviour
     public float randomTimeBase = 40.0f;
     public float randomOffset = 15.0f;
 
+    public bool enableFlickering = true;
 
     void Start()
     {
         light = GetComponent<Light>();
         animator = GetComponent<Animator>();
+
+        if (enableFlickering) ;
         StartCoroutine(LightCycle());
 
     }
@@ -47,12 +51,24 @@ public class Flashlight : MonoBehaviour
             randTime = randomTimeBase + Random.Range(-randomOffset, randomOffset);
 
             yield return new WaitForSeconds(randTime);
-            animator.SetTrigger("StartFlickering");
-            Invoke("StopFlickering", 4);
+            if(enableFlickering)
+            {
+                animator.SetTrigger("StartFlickering");
+                Invoke("StopFlickering", 4);
+            }
 
 
 
         }
+    }
+
+    public void DisableFlickering()
+    {
+        StopAllCoroutines();
+        animator.SetTrigger("StopFlickering");
+        sound.Stop();
+
+
     }
 
 }

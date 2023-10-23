@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lvl2_klucz_w_piecu
   m_EditorClassIdentifier: 
   m_Id: 12
-  duration: 3
+  duration: 4
   color: {r: 0.38431376, g: 0.38431376, b: 0.38431376, a: 0}
   m_Lines:
   - 'Joe: I have the key but I can''t reach it!'

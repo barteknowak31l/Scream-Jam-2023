@@ -18,11 +18,14 @@ public class RitualBook : MonoBehaviour, Interactable
 
     public Item EndKey;
 
+    public AudioSource devilLaugh;
+
     public void TriggerInteraction(GameObject interactedObject)
     {
         if (!interactive) return;
 
         endScreen.SetActive(true);
+        devilLaugh.Play();
         EventSystem.CallDialogueStart(this, new EventArgsDialogueStart { m_DialogueID = dialogue.m_Id });
         InventorySystemImpl.Instance.AddItem(EndKey);
     }

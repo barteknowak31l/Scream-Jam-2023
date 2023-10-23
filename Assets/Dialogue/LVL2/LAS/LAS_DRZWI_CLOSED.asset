@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LAS_DRZWI_CLOSED
   m_EditorClassIdentifier: 
   m_Id: 70
-  duration: 3
+  duration: 2
   color: {r: 0, g: 1, b: 0, a: 1}
   m_Lines:
   - FOREST - door locked

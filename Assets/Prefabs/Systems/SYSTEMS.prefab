@@ -201,8 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2333a42478f1b43a28ead053415963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractorSource: {fileID: 0}
-  InteractRange: 1
+  InteractRange: 2
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4533412714243598509
 GameObject:
   m_ObjectHideFlags: 0

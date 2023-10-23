@@ -18,7 +18,7 @@ MonoBehaviour:
   m_Lines:
   - 'Narrator: Welcome to The HELLevator!'
   - 'Narrator: Press WASD to move, E  to interact (or left click on keypad), Space
-    to skip dialogue'
+    to skip dialogue, Escape - toggle fullscreen'
   - 'Narrator: Let me introduce you to the plot:'
   - 'Narrator: A young youtuber named Joe went to an abandoned World War II facility. '
   - 'Narrator: There were strange noises coming from the elevator, so he decided

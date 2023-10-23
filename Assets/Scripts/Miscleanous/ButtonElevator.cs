@@ -11,6 +11,8 @@ public class ButtonElevator : MonoBehaviour, Interactable
     public AudioSource buttonSound;
     public AudioSource door;
 
+    private bool opened = false;
+
     private void Start()
     {
         EventSystem.InteractionPickupItem += OpenDoor;
@@ -24,8 +26,12 @@ public class ButtonElevator : MonoBehaviour, Interactable
         {
             if (button.itemID == iArgs.m_Item.itemID)
             {
+
+                if (opened) return;
+
                 doorAnim.Play("open");
                 door.Play();
+                opened = true;
             }
         }
     }
